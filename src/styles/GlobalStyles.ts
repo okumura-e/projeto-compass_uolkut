@@ -10,6 +10,11 @@ const GlobalStyles = createGlobalStyle`
     html {
         font-size: 62.5% /* Change the default value from font-size from 16px to 10px */;
     }
+
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 `;
 
 export default GlobalStyles;
