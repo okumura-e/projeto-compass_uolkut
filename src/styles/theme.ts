@@ -23,8 +23,8 @@ const theme = {
     xhuge: "9.6rem",
   },
   medias: {
-    tablet: "@media (max-width: 768px)",
-    mobile: "@media (max-width: 420px)",
+    desktop: "@media screen and (min-width: 768px)",
+    tablet: "@media screen and (min-width: 420px)",
   },
 };
 
