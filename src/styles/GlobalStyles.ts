@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     html {
-        font-size: 62.5% /* Change the default value from font-size from 16px to 10px */;
+        font-size: 62.5% /* Change the default font-size value from 16px to 10px */;
     }
 
     body {
