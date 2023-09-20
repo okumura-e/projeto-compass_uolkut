@@ -9,6 +9,7 @@ const theme = {
     secondaryBg: "#FDFEFF",
     placeholder: "#868686",
     lightGray: "#EFF3F8",
+    lightestGray: "#B4AEAE",
   },
   sizes: {
     tiny: "0.4rem",
