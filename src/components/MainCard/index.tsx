@@ -51,7 +51,7 @@ const MainCard = ({
 }: MainCardProps) => {
   return (
     <Container>
-      <Title>Bem vindo, {fullname}</Title>
+      <Title>Boa tarde, {fullname}</Title>
       <Thought>{thought}</Thought>
       <StatisticsContainer>
         <Statistic>

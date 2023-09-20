@@ -8,12 +8,15 @@ export const Container = styled.article`
       max-width: 320px;
       padding: 2.4rem;
 
-      min-height: 940px;
-
       color: ${theme.colors.content};
 
       background: ${theme.colors.secondaryBg};
       border-radius: 16px;
+
+      ${theme.medias.tablet} {
+        max-width: 600px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
     `;
   }}
 `;
@@ -25,6 +28,10 @@ export const Title = styled.h2`
       font-weight: 400;
 
       margin-bottom: 2rem;
+
+      ${theme.medias.tablet} {
+        font-size: 2.6rem;
+      }
     `;
   }}
 `;
@@ -36,7 +43,6 @@ export const Thought = styled.p`
 
       display: flex;
       align-items: center;
-      justify-content: center;
 
       padding-left: 1.2rem;
       margin-bottom: 4rem;
@@ -52,16 +58,30 @@ export const Thought = styled.p`
       &::before {
         position: absolute;
         left: 10px;
-        top: -4px;
+        top: -7px;
         content: "";
         display: block;
 
         width: 0;
         height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
 
-        border-bottom: 5px solid ${theme.colors.lightGray};
+        border-bottom: 8px solid ${theme.colors.lightGray};
+      }
+
+      ${theme.medias.tablet} {
+        font-size: 1.6rem;
+        min-height: 40px;
+
+        &::before {
+          top: -11px;
+          left: 20px;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+
+          border-bottom: 12px solid ${theme.colors.lightGray};
+        }
       }
     `;
   }}
@@ -146,7 +166,7 @@ export const PreferencesContainer = styled.section`
     return css`
       display: flex;
       flex-direction: column;
-      margin-top: auto;
+      margin-top: 244px;
       gap: 3.2rem;
     `;
   }}
