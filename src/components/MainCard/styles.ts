@@ -197,6 +197,16 @@ export const Tag = styled.span`
       &:not(:last-child) {
         margin-right: 1.4rem;
       }
+
+      &:not(:first-child) {
+        display: none;
+      }
+
+      ${theme.medias.tablet} {
+        &:not(:first-child) {
+          display: inline;
+        }
+      }
     `;
   }}
 `;

@@ -32,6 +32,7 @@ interface MainCardProps {
   city: string;
   country: string;
   state: string;
+  categories: { id: string | number; name: string; tags: string[] }[];
 }
 
 const MainCard = ({
@@ -48,6 +49,7 @@ const MainCard = ({
   country,
   job,
   maritalStatus,
+  categories,
 }: MainCardProps) => {
   return (
     <Container>
@@ -116,14 +118,15 @@ const MainCard = ({
         </Detail>
       </DetailsDataContainer>
       <PreferencesContainer>
-        <Preference>
-          Músicas: <Tag>Trap</Tag>
-          <SeeMoreLink>Ver todos</SeeMoreLink>
-        </Preference>
-        <Preference>
-          Filmes: <Tag>A rede social</Tag>
-          <SeeMoreLink>Ver todos</SeeMoreLink>
-        </Preference>
+        {categories.map((category) => (
+          <Preference key={`${category.id}`}>
+            {category.name}:
+            {category.tags.map((tag) => (
+              <Tag key={tag}>{tag}</Tag>
+            ))}
+            <SeeMoreLink>Ver todos</SeeMoreLink>
+          </Preference>
+        ))}
       </PreferencesContainer>
     </Container>
   );
