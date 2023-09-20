@@ -1,6 +1,24 @@
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
 import { AiOutlineUser } from 'react-icons/ai';
 import { GrGroup } from 'react-icons/gr';
+
+export const Section = styled.section`
+    ${({ theme }) => 
+        {
+            return css`
+                background-color: ${theme.colors.secondaryBg};
+                display: flex;
+                max-width: 320px;
+                padding: 2.4rem;
+                border-radius: 16px;
+                flex-direction: column;
+                ${theme.medias.tablet} {
+                    max-width: 280px;
+                }
+            `
+        }
+    }
+`
 
 export const Row = styled.header`
     display: flex;
@@ -8,50 +26,51 @@ export const Row = styled.header`
     justify-content: space-between;
 `
 
-export const Name = styled.h1`
+export const Name = styled.p`
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16px;
+    font-size: 1.4rem;
     letter-spacing: 0px;
     text-align: center;
     color: #4B4B4B;
 `
 
-export const Title = styled.h1`
+export const Title = styled.h2`
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
+    font-size: 1.6rem;
     letter-spacing: 0px;
 `
-export const SeeAll = styled.h1`
-    font-family: 'Roboto', sans-serif;;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0px;
-    color: #ED6D25;
+export const SeeAll = styled.a`
+    ${({ theme }) => {
+        return css`
+            font-family: 'Roboto', sans-serif;;
+            font-size: 1.4rem;
+            letter-spacing: 0px;
+            color: #ED6D25;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
 
-    &:hover {
-        text-decoration: underline;
-    }
-`
-
-export const Section = styled.section`
-    background-color: #FFFFFF;
-    display: flex;
-    max-width: 280px;
-    padding: 24px;
-    border-radius: 16px;
-    flex-direction: column;
+            &:hover {
+                color: ${theme.colors.primaryHover};
+                text-decoration: underline;
+            }
+        `
+    }}
 `
 export const Grid = styled.section`
-    margin-top: 32px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: repeat(3, 80px);
-    gap: 29px;
+    ${({ theme }) => {
+        return css`
+        
+            margin-top: 3.2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            grid-template-rows: repeat(3, 80px);
+            gap: 3.6rem;
+
+            ${theme.medias.tablet} {
+                gap: 3rem;
+            }
+        `
+    }}
 `
 export const Profile = styled.section`
     width: 56px;
