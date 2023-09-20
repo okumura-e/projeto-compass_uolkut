@@ -215,6 +215,7 @@ export const SeeMoreLink = styled.a`
 
       &:hover {
         color: ${theme.colors.primaryHover};
+        text-decoration: underline;
       }
     `;
   }}
