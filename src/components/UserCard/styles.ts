@@ -12,6 +12,7 @@ export const Container = styled.article`
       width: 100%;
 
       min-height: 260px;
+      max-height: 260px;
       height: 100%;
 
       border-radius: 16px;
