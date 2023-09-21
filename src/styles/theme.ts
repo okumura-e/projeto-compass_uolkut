@@ -4,9 +4,12 @@ const theme = {
     primaryHover: "#F08242",
     primaryDisabled: "#E25F12",
     secondary: "",
+    content: "#4B4B4B",
     background: "#D9E6F7",
+    secondaryBg: "#FDFEFF",
     placeholder: "#868686",
     lightGray: "#EFF3F8",
+    lightestGray: "#B4AEAE",
   },
   sizes: {
     tiny: "0.4rem",
@@ -21,8 +24,8 @@ const theme = {
     xhuge: "9.6rem",
   },
   medias: {
-    tablet: "@media (max-width: 768px)",
-    mobile: "@media (max-width: 420px)",
+    desktop: "@media screen and (min-width: 768px)",
+    tablet: "@media screen and (min-width: 480px)",
   },
 };
 

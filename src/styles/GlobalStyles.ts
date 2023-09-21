@@ -13,8 +13,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        max-width: 1200px;
-        margin: 0 auto;
+        background: #D9E6F7
     }
 `;
 
