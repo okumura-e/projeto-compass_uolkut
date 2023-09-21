@@ -16,10 +16,6 @@ export const Section = styled.section`
       max-height: 400px;
 
       flex-shrink: 0;
-
-      ${theme.medias.desktop} {
-        max-width: 280px;
-      }
     `;
   }}
 `;
@@ -72,23 +68,26 @@ export const Grid = styled.section`
 
       ${theme.medias.tablet} {
         overflow-y: auto;
-        grid-template-columns: repeat(auto-fit, 56px);
+        grid-template-columns: repeat(auto-fit, minmax(40px, 56px));
         gap: 3rem;
       }
     `;
   }}
 `;
 export const Profile = styled.section`
-  width: 56px;
-  height: 80px;
+  max-width: 56px;
+  max-height: 80px;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
 export const ProfilePhoto = styled.section`
-  height: 56px;
-  width: 56px;
+  height: auto;
+  max-width: 56px;
+  min-width: 40px;
   border: 1px solid #4b4b4b;
   border-radius: 100%;
   display: flex;
