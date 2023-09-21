@@ -19,7 +19,7 @@ export const ContentContainer = styled.div`
       padding: 0 2rem;
 
       margin: 0 auto;
-      ${theme.medias.tablet} {
+      ${theme.medias.desktop} {
         padding: 0;
       }
 
@@ -58,7 +58,7 @@ export const Logo = styled.h1`
 
       cursor: pointer;
 
-      ${theme.medias.tablet} {
+      ${theme.medias.desktop} {
         font-size: 3.6rem;
       }
     `;
@@ -68,7 +68,7 @@ export const Navbar = styled.nav`
   ${({ theme }) => {
     return css`
       display: none;
-      ${theme.medias.tablet} {
+      ${theme.medias.desktop} {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -141,7 +141,7 @@ export const UserContainer = styled.div`
 
         margin-right: 0.5rem;
 
-        ${theme.medias.tablet} {
+        ${theme.medias.desktop} {
           font-size: 2.4rem;
           height: 4rem;
           width: 4rem;
@@ -164,7 +164,7 @@ export const UserContainer = styled.div`
         cursor: pointer;
       }
 
-      ${theme.medias.tablet} {
+      ${theme.medias.desktop} {
         svg {
             width: 2.4rem;
         }
@@ -175,7 +175,7 @@ export const Username = styled.p`
   ${({ theme }) => {
     return css`
       display: none;
-      ${theme.medias.tablet} {
+      ${theme.medias.desktop} {
         display: block;
         margin-left: 1.4rem;
         margin-right: 0.4rem;
