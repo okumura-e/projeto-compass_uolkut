@@ -1,5 +1,4 @@
 import {
-    Title,
     Button,
   } from "./style";
   
@@ -11,16 +10,9 @@ import {
   function FormButton({ title, type }: ButtonProps) {
     return (
         <>
-            {type === "main" && (
-                <Button color="orange" >
-                    <Title>{title}</Title>
-                </Button>
-            )}
-            {type === "secundary" && (
-                <Button color="gray">
-                    <Title>{title}</Title>
-                </Button>
-            )}
+            <Button color={type}>
+                {title}
+            </Button>
         </>
     );
   }
