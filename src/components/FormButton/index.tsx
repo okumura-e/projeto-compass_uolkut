@@ -4,13 +4,13 @@ import {
   
   interface ButtonProps {
     title: string;
-    type: "main" | "secundary";
+    secundary: boolean;
   }
   
-  function FormButton({ title, type }: ButtonProps) {
+  function FormButton({ title, secundary }: ButtonProps) {
     return (
         <>
-            <Button color={type}>
+            <Button secundary={secundary}>
                 {title}
             </Button>
         </>

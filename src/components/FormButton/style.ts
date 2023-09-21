@@ -1,13 +1,13 @@
 import { styled, css } from "styled-components";
 
 interface ButtonProps {
-  color: string;
+  secundary: boolean;
 }
 
 export const Button = styled.button<ButtonProps>`
-  ${({ theme, color }) => {
+  ${({ theme, secundary }) => {
     return css`
-      ${color === "main"
+      ${secundary === true
         ? css`
           background-color: ${theme.colors.primary};
           color: white;
