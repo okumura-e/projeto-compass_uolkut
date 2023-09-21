@@ -9,7 +9,7 @@ export const Container = styled.div<ContainerProps>`
   ${({ theme, isHovering, isFocused }) => {
     return css`
       display: none;
-      ${theme.medias.tablet} {
+      @media screen and (min-width: 780px) {
         display: flex;
         align-items: center;
         justify-content: center;
