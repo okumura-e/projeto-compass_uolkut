@@ -25,7 +25,7 @@ const theme = {
   },
   medias: {
     desktop: "@media screen and (min-width: 768px)",
-    tablet: "@media screen and (min-width: 420px)",
+    tablet: "@media screen and (min-width: 480px)",
   },
 };
 
