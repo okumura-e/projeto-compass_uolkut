@@ -6,6 +6,8 @@ export const Container = styled.article`
       display: flex;
       flex-direction: column;
       max-width: 320px;
+
+      width: 100%;
       padding: 2.4rem;
 
       color: ${theme.colors.content};
@@ -171,6 +173,9 @@ export const PreferencesContainer = styled.section`
       flex-direction: column;
       margin-top: auto;
       gap: 3.2rem;
+
+      width: 100%;
+      overflow-x: hidden;
     `;
   }}
 `;
@@ -178,18 +183,39 @@ export const PreferencesContainer = styled.section`
 export const Preference = styled.p`
   ${({ theme }) => {
     return css`
+      display: flex;
+      align-items: center;
       font-size: 1.6rem;
       color: ${theme.colors.lightestGray};
     `;
   }}
 `;
 
-export const Tag = styled.span`
+export const TagsList = styled.ul`
+  ${({ theme }) => {
+    return css`
+      display: flex;
+      overflow-x: hidden;
+      width: fit-content;
+      max-width: 100%;
+
+      margin: 0;
+
+      list-style: none;
+    `;
+  }}
+`;
+
+export const Tag = styled.li`
   ${({ theme }) => {
     return css`
       padding: 0.2rem 1.6rem;
       font-size: 1.4rem;
       color: ${theme.colors.content};
+
+      white-space: nowrap;
+
+      width: min-content;
 
       border: 1px solid ${theme.colors.primary};
       border-radius: 9999px;
@@ -207,7 +233,8 @@ export const Tag = styled.span`
 
       ${theme.medias.tablet} {
         &:not(:first-child) {
-          display: inline;
+          display: flex;
+          list-style: none;
         }
       }
     `;
