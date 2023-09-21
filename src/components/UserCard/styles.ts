@@ -22,7 +22,6 @@ export const Container = styled.article`
       color: ${theme.colors.content};
 
       ${theme.medias.desktop} {
-        max-width: 280px;
         min-height: 325px;
       }
     `;
