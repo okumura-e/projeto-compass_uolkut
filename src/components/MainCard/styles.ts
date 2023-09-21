@@ -13,8 +13,11 @@ export const Container = styled.article`
       background: ${theme.colors.secondaryBg};
       border-radius: 16px;
 
+      min-height: 940px;
+
       ${theme.medias.tablet} {
         max-width: 600px;
+        min-height: 850px;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       }
     `;
@@ -166,7 +169,7 @@ export const PreferencesContainer = styled.section`
     return css`
       display: flex;
       flex-direction: column;
-      margin-top: 244px;
+      margin-top: auto;
       gap: 3.2rem;
     `;
   }}
