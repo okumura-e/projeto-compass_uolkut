@@ -65,11 +65,12 @@ export const FormContainer = styled.form`
   width: 100%;
 `;
 
-export const InputsContainer = styled.form`
+export const InputsContainer = styled.fieldset`
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
-width: 100%;
+  width: 100%;
+  border: none;
 `;
 
 export const ButtonContainer = styled.section`
