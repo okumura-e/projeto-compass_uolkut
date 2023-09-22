@@ -1,4 +1,3 @@
-import { useState, useEffect, useCallback } from "react";
 import { Container, CardSection, PseudoSection } from "./styles";
 import EditPerfilButton from "../../components/EditPerfilButton";
 import FeedSmallCard from "../../components/FeedSmallCard";
@@ -27,22 +26,6 @@ const mock = {
 };
 
 const PerfilPage = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const handleResize = useCallback(() => {
-    if (window.innerWidth > 768 && !isMobile) {
-      setIsMobile(false);
-    } else if (window.innerWidth < 768 && !isMobile) {
-      setIsMobile(true);
-    }
-  }, []);
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <>
       <PerfilHeader username="Gabriel Barbosa" />
@@ -55,20 +38,11 @@ const PerfilPage = () => {
           />
           <EditPerfilButton />
         </CardSection>
-        <MainCard {...mock} />
-
-        {isMobile && (
-          <>
-            <FeedSmallCard title="Amigos(248)" type="friends" />
-            <FeedSmallCard title="Comunidade(42)" type="community" />
-          </>
-        )}
-        {!isMobile && (
-          <PseudoSection>
-            <FeedSmallCard title="Amigos(248)" type="friends" />
-            <FeedSmallCard title="Comunidade(42)" type="community" />
-          </PseudoSection>
-        )}
+        <PseudoSection>
+          <MainCard {...mock} />
+          <FeedSmallCard title="Amigos(248)" type="friends" />
+          <FeedSmallCard title="Comunidade(42)" type="community" />
+        </PseudoSection>
       </Container>
     </>
   );
