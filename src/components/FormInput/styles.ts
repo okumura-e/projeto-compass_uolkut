@@ -35,6 +35,7 @@ export const Input = styled.input<InputProps>`
       flex-shrink: 0;
       border: 1px solid transparent;
       align-items: center;
+      width: 100%;
       justify-content: center;
       font-family: "Roboto Flex", sans-serif;
       font-size: 1.4rem;
