@@ -1,7 +1,7 @@
 import { styled, css } from "styled-components";
 
 interface ButtonProps {
-  alternative: boolean;
+  alternative?: boolean;
 }
 
 export const Button = styled.button<ButtonProps>`
