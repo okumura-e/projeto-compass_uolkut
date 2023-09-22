@@ -1,20 +1,22 @@
-import {
-    Input,
-  } from "./styles";
-  
-  interface InputProps {
-    placeHolder: string;
-    inputType: 'text' | 'password' | 'email' | 'date' ;
-    fullLength: boolean
-  }
-  
-  function FormInput({ placeHolder, inputType, fullLength }: InputProps) {
-    return (
-        <>
-            <Input placeholder={placeHolder} type={inputType} full={fullLength}></Input>
-        </>
-    );
-  }
-  
-  export default FormInput;
-  
+import { InputHTMLAttributes } from "react";
+import { Container, Input, ErrorText } from "./styles";
+
+interface InputProps {
+  half?: boolean;
+  error?: string;
+}
+
+function FormInput({
+  half,
+  error,
+  ...attributes
+}: InputProps & InputHTMLAttributes<HTMLInputElement>) {
+  return (
+    <Container half={half}>
+      <Input error={!!error} {...attributes}></Input>
+      <ErrorText>{error}</ErrorText>
+    </Container>
+  );
+}
+
+export default FormInput;
