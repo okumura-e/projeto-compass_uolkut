@@ -13,10 +13,11 @@ interface SelectProps {
   selected?: boolean;
   isHovering: boolean;
   isOpened: boolean;
+  hasError: boolean;
 }
 
 export const Select = styled.button<SelectProps>`
-  ${({ theme, selected, isHovering, isOpened }) => {
+  ${({ theme, selected, isHovering, isOpened, hasError }) => {
     return css`
       display: flex;
       justify-content: space-between;
@@ -47,6 +48,12 @@ export const Select = styled.button<SelectProps>`
         width: 2rem;
         height: auto;
       }
+
+      ${hasError &&
+      !isOpened &&
+      css`
+        border-color: #ff0035;
+      `}
 
       ${isOpened
         ? () => css`
@@ -133,6 +140,15 @@ export const Option = styled.li<OptionProps>`
               filter: brightness(0.9);
             }
           `}
+    `;
+  }}
+`;
+
+export const ErrorText = styled.small`
+  ${({ theme }) => {
+    return css`
+      color: #ff0035;
+      font-size: 1.2rem;
     `;
   }}
 `;
