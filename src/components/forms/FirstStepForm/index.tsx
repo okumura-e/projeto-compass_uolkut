@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
@@ -25,7 +26,24 @@ const FirstStepForm = () => {
     },
   });
 
+  const selectRef = useRef({} as { value: string; hasError: boolean });
+
+  const handleError = () => {
+    if (!selectRef.current.value) {
+      selectRef.current.hasError = true;
+    }
+    setTimeout(() => {
+      selectRef.current.hasError = false;
+      clearErrors();
+    }, 2500);
+  };
+
   const onSubmit = (data: unknown) => {
+    if (!selectRef.current.value) {
+      selectRef.current.hasError = true;
+      setTimeout(() => (selectRef.current.hasError = false), 2500);
+      return;
+    }
     console.log("Dados: ", data);
     navigate("/profile");
   };
@@ -34,9 +52,7 @@ const FirstStepForm = () => {
     <Container>
       <Logo role="img" />
       <Title>Cadastre-se no UOLkut</Title>
-      <FormContainer
-        onSubmit={handleSubmit(onSubmit, () => setTimeout(clearErrors, 2500))}
-      >
+      <FormContainer onSubmit={handleSubmit(onSubmit, handleError)}>
         <FormInput
           registerField={{
             ...register("email", {
@@ -117,7 +133,10 @@ const FirstStepForm = () => {
           />
         </RowContainer>
         <CustomSelect
-          onSelect={(text) => text}
+          selected={selectRef.current.value}
+          onSelect={(text) => {
+            selectRef.current.value = text;
+          }}
           options={[
             "Solteiro",
             "Casado",
@@ -126,6 +145,7 @@ const FirstStepForm = () => {
             "Preocupado",
           ]}
           placeholder="Relacionamento"
+          hasError={selectRef.current.hasError}
         />
         <FormButton title="Criar conta" />
       </FormContainer>

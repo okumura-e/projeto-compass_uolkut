@@ -58,7 +58,11 @@ export const Title = styled.h2`
       font-weight: 800;
       color: ${theme.colors.primary};
 
-      margin-bottom: 3.5rem;
+      margin-bottom: 3.2rem;
+
+      ${theme.medias.desktop} {
+        margin-bottom: 2rem;
+      }
     `;
   }}
 `;
