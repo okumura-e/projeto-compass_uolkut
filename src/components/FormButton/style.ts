@@ -1,21 +1,27 @@
 import { styled, css } from "styled-components";
 
 interface ButtonProps {
-  secundary: boolean;
+  alternative: boolean;
 }
 
 export const Button = styled.button<ButtonProps>`
-  ${({ theme, secundary }) => {
+  ${({ theme, alternative }) => {
     return css`
-      ${secundary === true
+      ${alternative
         ? css`
-          background-color: ${theme.colors.primary};
-          color: white;
-        `
+            background-color: ${theme.colors.lightGray};
+            color: ${theme.colors.primary};
+            &:hover {
+              filter: brightness(0.97);
+            }
+          `
         : css`
-          background-color: ${theme.colors.lightGray};
-          color: ${theme.colors.primary} ;
-        `}
+            background-color: ${theme.colors.primary};
+            color: white;
+            &:hover {
+              background-color: ${theme.colors.primaryHover};
+            }
+          `}
       width: 100%;
       border-radius: 8px;
       height: 3.7rem;
@@ -26,6 +32,8 @@ export const Button = styled.button<ButtonProps>`
       cursor: pointer;
       font-family: "Roboto Flex", sans-serif;
       font-size: 1.4rem;
+
+      transition: all 0.2s ease-in-out;
 
       ${theme.medias.desktop} {
         font-size: 1.8rem;
