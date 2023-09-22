@@ -65,6 +65,12 @@ export const Input = styled.input<InputProps>`
         font-size: 1.6rem;
         height: 5.1rem;
       }
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+      }
     `;
   }}
 `;

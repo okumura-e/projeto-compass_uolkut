@@ -67,6 +67,7 @@ export const RowContainer = styled.div`
   ${({ theme }) => {
     return css`
       display: flex;
+      width: 100%;
       gap: 2.5rem;
     `;
   }}
