@@ -4,6 +4,7 @@ import FormInput from "../../FormInput";
 import { Container, FormContainer, Logo, Title, RowContainer } from "./styles";
 
 import { useNavigate } from "react-router-dom";
+import CustomSelect from "../../CustomSelect";
 
 const FirstStepForm = () => {
   const navigate = useNavigate();
@@ -115,6 +116,17 @@ const FirstStepForm = () => {
             placeholder="Cidade"
           />
         </RowContainer>
+        <CustomSelect
+          onSelect={(text) => text}
+          options={[
+            "Solteiro",
+            "Casado",
+            "Divorciado",
+            "Namorando",
+            "Preocupado",
+          ]}
+          placeholder="Relacionamento"
+        />
         <FormButton title="Criar conta" />
       </FormContainer>
     </Container>
