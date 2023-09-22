@@ -1,6 +1,6 @@
 import {
     Input,
-  } from "./style";
+  } from "./styles";
   
   interface InputProps {
     placeHolder: string;

@@ -1,6 +1,6 @@
 import {
     Button,
-  } from "./style";
+  } from "./styles";
   
   interface ButtonProps {
     title: string;
