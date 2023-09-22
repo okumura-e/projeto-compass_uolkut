@@ -10,6 +10,7 @@ import {
   Detail,
   PreferencesContainer,
   Preference,
+  TagsList,
   Tag,
   SeeMoreLink,
 } from "./styles";
@@ -121,9 +122,11 @@ const MainCard = ({
         {categories.map((category) => (
           <Preference key={`${category.id}`}>
             {category.name}:
-            {category.tags.map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
-            ))}
+            <TagsList>
+              {category.tags.map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </TagsList>
             <SeeMoreLink>Ver todos</SeeMoreLink>
           </Preference>
         ))}

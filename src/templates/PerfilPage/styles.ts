@@ -4,7 +4,8 @@ export const Container = styled.main`
   ${({ theme }) => {
     return css`
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(300px, 320px);
+      justify-content: center;
 
       padding: 2rem;
 
@@ -42,12 +43,10 @@ export const Container = styled.main`
         padding-right: 1.6rem;
       }
 
-      ${theme.medias.desktop} {
+      @media screen and (min-width: 800px) {
         & > section:first-child {
           flex-direction: column;
         }
-        padding-left: 0;
-        padding-right: 0;
         gap: 2.8rem;
         grid-template-columns: minmax(160px, 280px) minmax(320px, 600px) minmax(
             160px,

@@ -68,7 +68,7 @@ export const Navbar = styled.nav`
   ${({ theme }) => {
     return css`
       display: none;
-      ${theme.medias.desktop} {
+      @media screen and (min-width: 600px) {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -125,6 +125,8 @@ export const UserContainer = styled.div`
       align-items: center;
       justify-content: center;
 
+      width: fit-content;
+
       span {
         display: flex;
         justify-content: center;
@@ -175,7 +177,7 @@ export const Username = styled.p`
   ${({ theme }) => {
     return css`
       display: none;
-      ${theme.medias.desktop} {
+      @media screen and (min-width: 780px) {
         display: block;
         margin-left: 1.4rem;
         margin-right: 0.4rem;

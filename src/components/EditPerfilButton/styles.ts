@@ -24,11 +24,10 @@ export const Button = styled.button`
       transition: filter 0.2s ease-in-out;
 
       &:hover {
-        filter: brightness(0.9);
+        filter: brightness(0.98);
       }
 
       ${theme.medias.desktop} {
-        max-width: 280px;
         min-height: 56px;
       }
     `;
