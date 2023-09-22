@@ -35,7 +35,7 @@ const NewPasswordForm = () => {
   const checkPassword  = watch("password")
 
   const onSubmit = (data: unknown) => {
-    navigate("/profile");
+    navigate("/login");
   };
   return (
     <Container>
