@@ -3,8 +3,7 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.footer`
   ${({ theme }) => {
-    return css`s
-
+    return css`
       display: none;
       margin-top: auto;
       background: ${theme.colors.secondaryBg};
