@@ -66,7 +66,7 @@ export const Grid = styled.section`
       grid-template-rows: repeat(3, 80px);
       gap: 3.6rem;
 
-      ${theme.medias.tablet} {
+      @media screen and (min-width: 800px) {
         overflow-y: auto;
         grid-template-columns: repeat(auto-fit, minmax(40px, 56px));
         gap: 3rem;

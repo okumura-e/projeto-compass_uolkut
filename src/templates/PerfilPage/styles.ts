@@ -57,11 +57,11 @@ export const PseudoSection = styled.section`
   ${({ theme }) => {
     return css`
       display: grid;
-      grid-template-columns: 320px;
+      grid-template-columns: minmax(300px, 320px);
       flex-direction: column;
       align-items: center;
       gap: 3.2rem;
-      justify-content: space-between;
+      justify-content: center;
       flex-shrink: 1;
 
       width: 100%;
