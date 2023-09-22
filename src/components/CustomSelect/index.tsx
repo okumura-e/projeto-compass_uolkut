@@ -57,7 +57,7 @@ const CustomSelect = ({
         <OptionsList>
           {options.map((text) => (
             <Option
-              selected={selected === text}
+              selected={currentSelected === text}
               onClick={() => handleSelectOption(text)}
               key={text}
             >
