@@ -9,7 +9,7 @@ export const Container = styled.footer`
       background: ${theme.colors.secondaryBg};
       padding: 2.4rem 0;
 
-      ${theme.medias.tablet} {
+      ${theme.medias.desktop} {
         display: block;
       }
     `;
@@ -19,17 +19,10 @@ export const Container = styled.footer`
 export const Text = styled.p`
   ${({ theme }) => {
     return css`
-      color: #ed6d25;
-      font-family: Roboto Flex;
-      font-size: 1.125rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1.5rem;
-      text-align: center;
+      color: ${theme.colors.primary};
 
-      ${theme.medias.mobile} {
-        display: none;
-      }
+      font-size: 1.8rem;
+      text-align: center;
     `;
   }}
 `;
