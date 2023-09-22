@@ -6,12 +6,20 @@ import {
   ButtonContainer,
   RememberPassword,
   RememberContainer,
-  InputsContainer
+  InputsContainer,
 } from "./styles";
+
+import { useNavigate } from "react-router-dom";
+
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
 
 const NewPasswordForm = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate("/profile");
+  };
   return (
     <Container>
       <Logo role="img" />
@@ -23,18 +31,20 @@ const NewPasswordForm = () => {
           <FormInput type="password" placeholder="Nova senha" />
           <FormInput type="password" placeholder="Confirmar a senha" />
         </InputsContainer>
-        
+
         <ButtonContainer>
-          <FormButton title="Salvar" />
+          <FormButton onClick={handleSubmit} title="Salvar" />
         </ButtonContainer>
-          
+
         <RememberContainer>
           <RememberPassword>Lembrou sua Senha?</RememberPassword>
-          <FormButton alternative title="Entrar com as credenciais" />
+          <FormButton
+            onClick={() => navigate("/login")}
+            alternative
+            title="Entrar com as credenciais"
+          />
         </RememberContainer>
-  
       </FormContainer>
-
     </Container>
   );
 };

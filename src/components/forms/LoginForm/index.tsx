@@ -6,12 +6,16 @@ import {
   CheckBoxContainer,
   CheckBox,
   Label,
-  ForgotPassword,
 } from "./styles";
+
+import { Link, useNavigate } from "react-router-dom";
+
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Logo role="img" />
@@ -24,9 +28,13 @@ const LoginForm = () => {
           <Label htmlFor="rememberMe">Lembrar minha senha</Label>
         </CheckBoxContainer>
         <FormButton title="Entrar" />
-        <FormButton alternative title="Criar conta" />
+        <FormButton
+          onClick={() => navigate("/register")}
+          alternative
+          title="Criar conta"
+        />
       </FormContainer>
-      <ForgotPassword>Esqueci minha senha</ForgotPassword>
+      <Link to="/forgot-password">Esqueci minha senha</Link>
     </Container>
   );
 };

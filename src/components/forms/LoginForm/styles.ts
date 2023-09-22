@@ -23,6 +23,20 @@ export const Container = styled.section`
         max-width: 380px;
         min-height: 600px;
       }
+
+      a {
+        font-size: 1.4rem;
+        color: ${theme.colors.primary};
+        text-decoration: underline;
+
+        margin-top: 7.7rem;
+
+        transition: color 0.2s ease-in-out;
+      }
+
+      a:hover {
+        color: ${theme.colors.primaryHover};
+      }
     `;
   }}
 `;

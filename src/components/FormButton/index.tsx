@@ -3,12 +3,15 @@ import { Button } from "./styles";
 interface ButtonProps {
   title: string;
   alternative?: boolean;
+  onClick?: () => void;
 }
 
-function FormButton({ title, alternative }: ButtonProps) {
+function FormButton({ title, alternative, onClick }: ButtonProps) {
   return (
     <>
-      <Button alternative={alternative}>{title}</Button>
+      <Button onClick={onClick} alternative={alternative}>
+        {title}
+      </Button>
     </>
   );
 }
