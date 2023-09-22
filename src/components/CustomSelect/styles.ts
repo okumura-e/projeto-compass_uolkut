@@ -4,7 +4,7 @@ export const Container = styled.div`
   ${({ theme }) => {
     return css`
       position: relative;
-      width: 50%;
+      width: 100%;
     `;
   }}
 `;

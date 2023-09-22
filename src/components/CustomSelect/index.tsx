@@ -24,6 +24,13 @@ const CustomSelect = ({
     onSelect(text);
   };
 
+  const handleSelectClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    setIsOpen((prev) => !prev);
+  };
+
   return (
     <Container>
       <Select
@@ -31,7 +38,7 @@ const CustomSelect = ({
         isHovering={isHovering}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={(e) => handleSelectClick(e)}
       >
         <span>{selected || placeholder}</span>
         <IoIosArrowDown />
