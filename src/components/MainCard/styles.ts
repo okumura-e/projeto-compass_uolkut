@@ -95,10 +95,11 @@ export const Thought = styled.p`
 export const StatisticsContainer = styled.section`
   ${({ theme }) => {
     return css`
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 100px);
+      display: flex;
       gap: 3.2rem;
       width: 100%;
+
+      flex-wrap: wrap;
 
       margin-bottom: 4.8rem;
     `;
