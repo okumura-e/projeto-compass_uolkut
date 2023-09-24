@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Container, Select, OptionsList, Option } from "./styles";
+import { useState, useEffect } from "react";
+import { Container, Select, OptionsList, Option, ErrorText } from "./styles";
 
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -8,6 +8,7 @@ interface CustomSelectProps {
   options: string[];
   placeholder: string;
   onSelect: (option: string) => void;
+  hasError?: boolean;
 }
 
 const CustomSelect = ({
@@ -15,12 +16,20 @@ const CustomSelect = ({
   options,
   placeholder,
   onSelect,
+  hasError,
 }: CustomSelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const [currentSelected, setCurrentSelected] = useState(selected);
+  const [error, setError] = useState(hasError);
+
+  useEffect(() => {
+    setError(hasError);
+  }, [hasError]);
 
   const handleSelectOption = (text: string) => {
     setIsOpen(false);
+    setCurrentSelected(text);
     onSelect(text);
   };
 
@@ -35,19 +44,20 @@ const CustomSelect = ({
     <Container>
       <Select
         isOpened={isOpen}
+        hasError={error}
         isHovering={isHovering}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         onClick={(e) => handleSelectClick(e)}
       >
-        <span>{selected || placeholder}</span>
+        <span>{currentSelected || placeholder}</span>
         <IoIosArrowDown />
       </Select>
       {isOpen && (
         <OptionsList>
           {options.map((text) => (
             <Option
-              selected={selected === text}
+              selected={currentSelected === text}
               onClick={() => handleSelectOption(text)}
               key={text}
             >
@@ -56,6 +66,7 @@ const CustomSelect = ({
           ))}
         </OptionsList>
       )}
+      {!isOpen && hasError && <ErrorText>Este campo é obrigatório!</ErrorText>}
     </Container>
   );
 };

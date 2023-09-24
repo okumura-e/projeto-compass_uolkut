@@ -2,34 +2,27 @@ import { BsDisplay } from "react-icons/bs";
 import styled, { css } from "styled-components";
 
 export const Container = styled.footer`
-    ${({ theme }) => {
+  ${({ theme }) => {
     return css`
+      display: none;
+      margin-top: auto;
       background: ${theme.colors.secondaryBg};
       padding: 2.4rem 0;
 
-      ${theme.medias.mobile} {
-        display: none;
+      ${theme.medias.desktop} {
+        display: block;
       }
     `;
   }}
 `;
 
 export const Text = styled.p`
-    ${({ theme }) => {
+  ${({ theme }) => {
     return css`
-    color: #ED6D25;
-    font-family: Roboto Flex;
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5rem;   
-    text-align: center;
+      color: ${theme.colors.primary};
 
-    ${theme.medias.mobile} {
-        display: none;
-    }
+      font-size: 1.8rem;
+      text-align: center;
+    `;
+  }}
 `;
-    }}
-
-`;
-

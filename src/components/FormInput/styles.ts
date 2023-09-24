@@ -7,6 +7,7 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
   ${({ theme, half }) => {
     return css`
+      position: relative;
       display: flex;
       flex-direction: column;
       ${half
@@ -65,6 +66,12 @@ export const Input = styled.input<InputProps>`
         font-size: 1.6rem;
         height: 5.1rem;
       }
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+      }
     `;
   }}
 `;
@@ -72,8 +79,12 @@ export const Input = styled.input<InputProps>`
 export const ErrorText = styled.small`
   ${({ theme }) => {
     return css`
+      position: absolute;
+      bottom: -1.6rem;
+      left: 0.4rem;
       color: #ff0035;
       font-size: 1.2rem;
+      white-space: nowrap;
     `;
   }}
 `;
