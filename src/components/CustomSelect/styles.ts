@@ -91,6 +91,10 @@ export const OptionsList = styled.ul`
       gap: 0.4rem;
       background: #fff;
 
+      max-height: 110px;
+
+      overflow-y: auto;
+
       width: 100%;
 
       list-style: none;
@@ -105,6 +109,22 @@ export const OptionsList = styled.ul`
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
       animation: ${fadeIn} 0.2s ease-in-out;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: ${theme.colors.primary};
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: ${theme.colors.primaryHover};
+      }
     `;
   }}
 `;
@@ -147,6 +167,9 @@ export const Option = styled.li<OptionProps>`
 export const ErrorText = styled.small`
   ${({ theme }) => {
     return css`
+      position: absolute;
+      bottom: -1.6rem;
+      left: 0.4rem;
       color: #ff0035;
       font-size: 1.2rem;
     `;
