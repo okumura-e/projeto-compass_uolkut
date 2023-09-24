@@ -10,6 +10,7 @@ import FirstStepForm from "./components/forms/FirstStepForm";
 import NewPasswordForm from "./components/forms/NewPassword";
 import PerfilPage from "./templates/PerfilPage";
 import ForgotPasswordForm from "./components/forms/ForgotPassword";
+import EditPerfilPage from "./templates/EditPerfilPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
       <Route path="/new-password" element={<NewPasswordForm />} />
     </Route>,
     <Route path="/profile" element={<PerfilPage />} />,
+    <Route path="/edit-profile" element={<EditPerfilPage />} />,
   ])
 );
 
