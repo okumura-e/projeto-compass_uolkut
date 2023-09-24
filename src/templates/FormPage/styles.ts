@@ -2,19 +2,26 @@ import styled, { css } from "styled-components";
 import formImage from "../../assets/form-image.png";
 
 export const Container = styled.main`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 1200px;
-  height: 100%;
-  margin: 0 auto;
-  padding: 3.2rem 2rem;
+  ${({ theme }) => {
+    return css`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3.2rem 2rem;
 
-  gap: 3.2rem;
+      gap: 3.2rem;
 
-  @media screen and (min-width: 1200px) {
-    padding: 3.2rem 0;
-  }
+      @media screen and (min-width: 1200px) {
+        padding: 3.2rem 0;
+      }
+
+      ${theme.medias.desktop} {
+        margin: auto;
+      }
+    `;
+  }}
 `;
 export const LeftSection = styled.section`
   ${({ theme }) => {

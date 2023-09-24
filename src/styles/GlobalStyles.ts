@@ -13,7 +13,13 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        background: #D9E6F7
+        background: #D9E6F7;
+    }
+
+    #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 `;
 

@@ -5,7 +5,6 @@ export const Container = styled.footer`
   ${({ theme }) => {
     return css`
       display: none;
-      margin-top: auto;
       background: ${theme.colors.secondaryBg};
       padding: 2.4rem 0;
 
