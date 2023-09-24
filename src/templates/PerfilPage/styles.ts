@@ -16,13 +16,17 @@ export const Container = styled.main`
       margin: 0 auto;
       margin-top: 8rem;
 
-      padding-bottom: 5rem;
+      padding-bottom: 3.2rem;
 
       gap: 2.8rem;
 
       @media screen and (max-width: 1200px) {
         padding-left: 1.6rem;
         padding-right: 1.6rem;
+      }
+      @media screen and (min-width: 1200px) {
+        padding-left: 0;
+        padding-right: 0;
       }
 
       @media screen and (min-width: 800px) {
@@ -47,8 +51,9 @@ export const CardSection = styled.section`
       width: 100%;
       max-width: 320px;
 
-      ${theme.medias.desktop} {
+      @media screen and (min-width: 800px) {
         order: initial;
+        max-width: 280px;
       }
     `;
   }}
