@@ -1,11 +1,12 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.main`
   ${({ theme }) => {
     return css`
       display: grid;
 
       max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
 
       gap: 3.2rem;
