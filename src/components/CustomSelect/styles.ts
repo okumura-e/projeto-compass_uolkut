@@ -93,6 +93,8 @@ export const OptionsList = styled.ul`
       gap: 0.4rem;
       background: #fff;
 
+      z-index: 10;
+
       max-height: 110px;
 
       overflow-y: auto;
