@@ -14,7 +14,7 @@ import ForgotPasswordForm from "./components/forms/ForgotPassword";
 const router = createBrowserRouter(
   createRoutesFromElements([
     <Route index={false} path="/" element={<FormPage />}>
-      <Route path="/login" element={<LoginForm />} />
+      <Route path="/" element={<LoginForm />} />
       <Route path="/register" element={<FirstStepForm />} />
       <Route path="/forgot-password" element={<ForgotPasswordForm />} />
       <Route path="/new-password" element={<NewPasswordForm />} />
