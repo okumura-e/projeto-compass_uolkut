@@ -11,21 +11,19 @@ const EditInfoCard = () => {
         <Fieldset>
           <FormInput placeholder="Profissão" />
           <FormInput placeholder="Nome" />
-          <FormInput placeholder="Cidade" />
-          <FormInput placeholder="País" half />
-          <FormInput
-            type="date"
-            max={new Date().toISOString().split("T")[0]}
-            half
-          />
+          <FormInput placeholder="País" />
           <FormInput placeholder="Senha" type="password" />
+        </Fieldset>
+        <Fieldset>
+          <CustomSelect
+            onSelect={(text: string) => text}
+            options={["teste", "teste2"]}
+            placeholder="Relacionamento"
+          />
+          <FormInput placeholder="Cidade" />
+          <FormInput type="date" max={new Date().toISOString().split("T")[0]} />
           <FormInput placeholder="Repetir senha" type="password" />
         </Fieldset>
-        <CustomSelect
-          onSelect={(text: string) => text}
-          options={["teste", "teste2"]}
-          placeholder="Relacionamento"
-        />
         <ButtonHolder>
           <FormButton title="Salvar" />
         </ButtonHolder>

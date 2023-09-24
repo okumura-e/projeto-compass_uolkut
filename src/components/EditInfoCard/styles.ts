@@ -53,8 +53,8 @@ export const Form = styled.form`
       grid-template-columns: 1fr;
 
       ${theme.medias.desktop} {
-        grid-template-columns: repeat(2, minmax(180px, 215px));
-        justify-content: space-between;
+        grid-template-columns: repeat(2, minmax(180px, 270px));
+        gap: 1rem;
       }
     `;
   }}
@@ -82,6 +82,10 @@ export const ButtonHolder = styled.div`
       width: 100%;
 
       margin: 0 auto;
+      margin-top: 170px;
+      ${theme.medias.desktop} {
+        margin-top: 170px;
+      }
     `;
   }}
 `;
