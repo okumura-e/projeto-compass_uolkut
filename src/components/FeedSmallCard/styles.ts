@@ -70,6 +70,22 @@ export const Grid = styled.section`
         overflow-y: auto;
         grid-template-columns: repeat(auto-fit, minmax(40px, 56px));
         gap: 3rem;
+
+        &::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: ${theme.colors.primary};
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: ${theme.colors.primaryHover};
+        }
       }
     `;
   }}
