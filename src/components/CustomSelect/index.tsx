@@ -21,10 +21,10 @@ const CustomSelect = ({
   const [isOpen, setIsOpen] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [currentSelected, setCurrentSelected] = useState(selected);
-  const [error, setError] = useState(hasError);
+  const [error, setError] = useState(hasError || false);
 
   useEffect(() => {
-    setError(hasError);
+    setError(hasError || false);
   }, [hasError]);
 
   const handleSelectOption = (text: string) => {

@@ -23,6 +23,8 @@ export const Select = styled.button<SelectProps>`
       justify-content: space-between;
       align-items: center;
 
+      min-height: 50px;
+
       background: ${theme.colors.lightGray};
       border: 1px solid transparent;
       border-radius: 8px;
