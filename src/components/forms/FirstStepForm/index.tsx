@@ -2,7 +2,14 @@ import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
-import { Container, FormContainer, Logo, Title, RowContainer } from "./styles";
+import {
+  Container,
+  FormContainer,
+  Logo,
+  Title,
+  RowContainer,
+  ButtonContainer,
+} from "./styles";
 
 import { useNavigate } from "react-router-dom";
 import CustomSelect from "../../CustomSelect";
@@ -147,7 +154,9 @@ const FirstStepForm = () => {
           placeholder="Relacionamento"
           hasError={selectRef.current.hasError}
         />
-        <FormButton title="Criar conta" />
+        <ButtonContainer>
+          <FormButton title="Criar conta" />
+        </ButtonContainer>
       </FormContainer>
     </Container>
   );

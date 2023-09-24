@@ -31,8 +31,18 @@ export const FormContainer = styled.form`
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100%;
       justify-content: center;
       gap: 2rem;
+
+      flex: 1;
+
+      padding-bottom: 2.4rem;
+
+      ${theme.medias.desktop} {
+        flex: initial;
+        padding-bottom: 0;
+      }
     `;
   }}
 `;
@@ -73,6 +83,18 @@ export const RowContainer = styled.div`
       display: flex;
       width: 100%;
       gap: 2.5rem;
+    `;
+  }}
+`;
+
+export const ButtonContainer = styled.div`
+  ${({ theme }) => {
+    return css`
+      display: flex;
+      height: 100%;
+      align-items: flex-end;
+      width: 100%;
+      margin-top: auto;
     `;
   }}
 `;
