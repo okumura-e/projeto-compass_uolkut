@@ -60,7 +60,7 @@ const ForgotPasswordForm = () => {
         <RememberContainer>
           <RememberPassword>Lembrou sua Senha?</RememberPassword>
           <FormButton
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/")}
             alternative
             title="Entrar com as credenciais"
           />
