@@ -16,7 +16,7 @@ export const Container = styled.main`
       width: 100%;
 
       margin: 0 auto;
-      margin-top: 8rem;
+      margin-top: 2.4rem;
 
       padding-bottom: 3.2rem;
 
@@ -36,6 +36,16 @@ export const Container = styled.main`
         flex-direction: row;
 
         align-items: flex-start;
+
+        margin-top: 8rem;
+      }
+
+      & > div {
+        max-width: 320px;
+        margin: 0;
+        @media screen and (min-width: 800px) {
+          display: none;
+        }
       }
     `;
   }}

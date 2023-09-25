@@ -8,45 +8,42 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
   ${({ theme, isHovering, isFocused }) => {
     return css`
-      display: none;
-      @media screen and (min-width: 780px) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 1.4rem;
-        gap: 1.2rem;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1.4rem;
+      gap: 1.2rem;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
 
-        max-width: 350px;
-        width: 100%;
+      max-width: 350px;
+      width: 100%;
 
-        background: ${theme.colors.lightGray};
+      background: ${theme.colors.lightGray};
 
-        color: ${theme.colors.content};
+      color: ${theme.colors.content};
 
-        transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
 
-        border: 1px solid transparent;
+      border: 1px solid transparent;
 
-        ${isHovering && !isFocused
-          ? () => css`
-              border-color: rgba(0, 0, 0, 0.2);
-            `
-          : null}
+      ${isHovering && !isFocused
+        ? () => css`
+            border-color: rgba(0, 0, 0, 0.2);
+          `
+        : null}
 
-        ${isFocused
-          ? () => css`
-              border-color: ${theme.colors.content};
-            `
-          : null}
+      ${isFocused
+        ? () => css`
+            border-color: ${theme.colors.content};
+          `
+        : null}
 
         svg {
-          width: 2rem;
-          height: auto;
+        width: 2rem;
+        height: auto;
 
-          fill: ${theme.colors.lightestGray};
-        }
+        fill: ${theme.colors.lightestGray};
       }
     `;
   }}

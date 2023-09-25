@@ -4,6 +4,7 @@ import FeedSmallCard from "../../components/cards/FeedSmallCard";
 import MainCard from "../../components/cards/MainCard";
 import PerfilHeader from "../../components/PerfilHeader";
 import UserCard from "../../components/cards/UserCard";
+import SearchInput from "../../components/SearchInput";
 
 const mock = {
   fullname: "Gabriel Barbosa",
@@ -30,6 +31,7 @@ const PerfilPage = () => {
     <>
       <PerfilHeader username="Gabriel Barbosa" />
       <Container>
+        <SearchInput />
         <CardSection>
           <UserCard
             fullname="Gabriel Barbosa"
