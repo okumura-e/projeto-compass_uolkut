@@ -13,7 +13,7 @@ import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
 import { useForm } from "react-hook-form";
 // import FormCard from "../FormCard";
-import BlankCard from "../../BlankCard";
+import BlankCard from "../../cards/BlankCard";
 
 const ForgotPasswordForm = () => {
   const {

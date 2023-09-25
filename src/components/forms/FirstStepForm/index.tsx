@@ -12,7 +12,7 @@ import {
 
 import { useNavigate } from "react-router-dom";
 import CustomSelect from "../../CustomSelect";
-import BlankCard from "../../BlankCard";
+import BlankCard from "../../cards/BlankCard";
 
 const FirstStepForm = () => {
   const navigate = useNavigate();

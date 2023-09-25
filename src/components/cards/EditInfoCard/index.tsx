@@ -1,7 +1,7 @@
 import { Title, Form, Fieldset, ButtonHolder } from "./styles";
-import CustomSelect from "../CustomSelect";
-import FormButton from "../FormButton";
-import FormInput from "../FormInput";
+import CustomSelect from "../../CustomSelect";
+import FormButton from "../../FormButton";
+import FormInput from "../../FormInput";
 import BlankCard from "../BlankCard";
 
 const EditInfoCard = () => {

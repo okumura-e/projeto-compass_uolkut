@@ -1,7 +1,7 @@
 import { Container } from "./styles";
 import PerfilHeader from "../../components/PerfilHeader";
-import EditUserCard from "../../components/EditUserCard";
-import EditInfoCard from "../../components/EditInfoCard";
+import EditUserCard from "../../components/cards/EditUserCard";
+import EditInfoCard from "../../components/cards/EditInfoCard";
 
 const EditPerfilPage = () => {
   return (

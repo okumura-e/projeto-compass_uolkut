@@ -1,9 +1,9 @@
 import { Container, CardSection, PseudoSection } from "./styles";
 import EditPerfilButton from "../../components/EditPerfilButton";
-import FeedSmallCard from "../../components/FeedSmallCard";
-import MainCard from "../../components/MainCard";
+import FeedSmallCard from "../../components/cards/FeedSmallCard";
+import MainCard from "../../components/cards/MainCard";
 import PerfilHeader from "../../components/PerfilHeader";
-import UserCard from "../../components/UserCard";
+import UserCard from "../../components/cards/UserCard";
 
 const mock = {
   fullname: "Gabriel Barbosa",
