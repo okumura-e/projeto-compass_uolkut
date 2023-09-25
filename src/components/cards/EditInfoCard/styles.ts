@@ -24,7 +24,7 @@ export const Form = styled.form`
     return css`
       display: flex;
       flex-direction: column;
-      gap: 1.6rem;
+      gap: 2rem;
     `;
   }}
 `;

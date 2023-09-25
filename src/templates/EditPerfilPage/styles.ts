@@ -30,6 +30,10 @@ export const Container = styled.main`
         padding-right: 0;
       }
 
+      & > section:nth-child(2) {
+        min-height: 670px;
+        padding-bottom: 5.4rem;
+      }
       ${theme.medias.desktop} {
         grid-template-columns: minmax(160px, 280px) minmax(320px, 600px) 1fr;
         & > section:nth-child(1) {
@@ -41,6 +45,7 @@ export const Container = styled.main`
 
         & > section:nth-child(2) {
           min-height: 850px;
+          padding-bottom: 2.4rem;
         }
       }
     `;
