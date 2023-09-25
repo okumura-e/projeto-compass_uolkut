@@ -1,11 +1,12 @@
-import { Container, Title, Form, Fieldset, ButtonHolder } from "./styles";
-import CustomSelect from "../CustomSelect";
-import FormButton from "../FormButton";
-import FormInput from "../FormInput";
+import { Title, Form, Fieldset, ButtonHolder } from "./styles";
+import CustomSelect from "../../CustomSelect";
+import FormButton from "../../FormButton";
+import FormInput from "../../FormInput";
+import BlankCard from "../BlankCard";
 
 const EditInfoCard = () => {
   return (
-    <Container>
+    <BlankCard>
       <Title>Editar Informações</Title>
       <Form>
         <Fieldset>
@@ -28,7 +29,7 @@ const EditInfoCard = () => {
           <FormButton title="Salvar" />
         </ButtonHolder>
       </Form>
-    </Container>
+    </BlankCard>
   );
 };
 

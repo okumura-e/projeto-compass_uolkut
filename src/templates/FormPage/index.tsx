@@ -1,8 +1,7 @@
 import React from "react";
-import { Container, LeftSection, Text } from "./styles";
+import { Container, LeftSection, Text, Footer, FooterText } from "./styles";
 import FormPageHeader from "../../components/FormPageHeader";
 import { Outlet } from "react-router-dom";
-import Footer from "../../components/Footer";
 
 function FormPage() {
   return (
@@ -18,7 +17,9 @@ function FormPage() {
         <Outlet />
       </Container>
 
-      <Footer />
+      <Footer>
+        <FooterText>Todos os direitos reservados</FooterText>
+      </Footer>
     </>
   );
 }

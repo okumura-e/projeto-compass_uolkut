@@ -2,24 +2,6 @@ import { styled, css } from "styled-components";
 import { AiOutlineUser } from "react-icons/ai";
 import { GrGroup } from "react-icons/gr";
 
-export const Section = styled.section`
-  ${({ theme }) => {
-    return css`
-      background-color: ${theme.colors.secondaryBg};
-      display: flex;
-      max-width: 320px;
-      width: 100%;
-      padding: 2.4rem;
-      border-radius: 16px;
-      flex-direction: column;
-
-      max-height: 400px;
-
-      flex-shrink: 0;
-    `;
-  }}
-`;
-
 export const Row = styled.header`
   display: flex;
   flex-direction: row;

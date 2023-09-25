@@ -1,5 +1,4 @@
 import {
-  Container,
   Logo,
   Title,
   FormContainer,
@@ -12,7 +11,9 @@ import { useNavigate } from "react-router-dom";
 
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
+// import FormCard from "../FormCard";
+import BlankCard from "../../cards/BlankCard";
 
 const ForgotPasswordForm = () => {
   const {
@@ -25,21 +26,22 @@ const ForgotPasswordForm = () => {
       email: "",
     },
   });
-  
+
   const onSubmit = (data: unknown) => {
     navigate("/new-password");
   };
 
   const navigate = useNavigate();
   return (
-    <Container>
+    <BlankCard>
       <Logo role="img" />
       <Title>Recupere sua senha</Title>
 
       <FormContainer
         onSubmit={handleSubmit(onSubmit, () => setTimeout(clearErrors, 2500))}
       >
-        <FormInput registerField={{
+        <FormInput
+          registerField={{
             ...register("email", {
               required: { value: true, message: "O email é obrigatório!" },
               pattern: {
@@ -49,24 +51,29 @@ const ForgotPasswordForm = () => {
             }),
           }}
           error={errors?.email?.message}
-          type="email" 
-          placeholder="E-mail cadastrado" 
+          type="email"
+          placeholder="E-mail cadastrado"
         />
 
         <ButtonContainer>
-          <FormButton title="Enviar código" onClick={handleSubmit(onSubmit, () => setTimeout(clearErrors, 2500))} />
+          <FormButton
+            title="Enviar código"
+            onClick={handleSubmit(onSubmit, () =>
+              setTimeout(clearErrors, 2500)
+            )}
+          />
         </ButtonContainer>
 
         <RememberContainer>
           <RememberPassword>Lembrou sua Senha?</RememberPassword>
           <FormButton
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/")}
             alternative
             title="Entrar com as credenciais"
           />
         </RememberContainer>
       </FormContainer>
-    </Container>
+    </BlankCard>
   );
 };
 

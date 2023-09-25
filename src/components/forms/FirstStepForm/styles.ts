@@ -1,30 +1,5 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.section`
-  ${({ theme }) => {
-    return css`
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      background: ${theme.colors.secondaryBg};
-      border-radius: 16px;
-
-      padding: 1rem 2rem 0 2rem;
-
-      max-width: 320px;
-      width: 100%;
-
-      min-height: 580px;
-
-      ${theme.medias.tablet} {
-        justify-content: center;
-        max-width: 380px;
-        min-height: 600px;
-      }
-    `;
-  }}
-`;
 export const FormContainer = styled.form`
   ${({ theme }) => {
     return css`
@@ -37,10 +12,10 @@ export const FormContainer = styled.form`
 
       flex: 1;
 
-      padding-bottom: 2.4rem;
-
       ${theme.medias.desktop} {
         flex: initial;
+        justify-content: flex-start;
+        min-height: initial;
         padding-bottom: 0;
       }
     `;
@@ -57,6 +32,8 @@ export const Logo = styled.span`
       border-radius: 50%;
 
       margin-bottom: 0.8rem;
+
+      flex-shrink: 0;
     `;
   }}
 `;
@@ -95,6 +72,10 @@ export const ButtonContainer = styled.div`
       align-items: flex-end;
       width: 100%;
       margin-top: auto;
+      ${theme.medias.desktop} {
+        height: initial;
+        margin-top: initial;
+      }
     `;
   }}
 `;

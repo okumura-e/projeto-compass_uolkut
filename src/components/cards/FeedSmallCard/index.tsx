@@ -1,7 +1,7 @@
+import BlankCard from "../BlankCard";
 import {
   Title,
   SeeAll,
-  Section,
   Row,
   Grid,
   Icon,
@@ -42,7 +42,7 @@ interface FeedSmallCardProps {
 
 function FeedSmallCard({ title, type }: FeedSmallCardProps) {
   return (
-    <Section>
+    <BlankCard>
       <Row>
         <Title>{title}</Title>
         <SeeAll>Ver todos</SeeAll>
@@ -73,7 +73,7 @@ function FeedSmallCard({ title, type }: FeedSmallCardProps) {
           ))}
         </Grid>
       )}
-    </Section>
+    </BlankCard>
   );
 }
 

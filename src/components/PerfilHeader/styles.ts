@@ -46,6 +46,12 @@ export const RightSection = styled.section`
       display: flex;
       justify-content: flex-end;
       width: 100%;
+
+      @media screen and (max-width: 780px) {
+        & div:nth-child(1) {
+          display: none;
+        }
+      }
     `;
   }}
 `;

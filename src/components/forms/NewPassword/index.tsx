@@ -1,5 +1,4 @@
 import {
-  Container,
   Logo,
   Title,
   FormContainer,
@@ -14,6 +13,8 @@ import { useNavigate } from "react-router-dom";
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
 import { useForm } from "react-hook-form";
+import FormCard from "../FormCard";
+import BlankCard from "../../cards/BlankCard";
 
 const NewPasswordForm = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const NewPasswordForm = () => {
     formState: { errors },
     handleSubmit,
     register,
-    watch
+    watch,
   } = useForm({
     defaultValues: {
       code: "",
@@ -32,13 +33,13 @@ const NewPasswordForm = () => {
     },
   });
 
-  const checkPassword  = watch("password")
+  const checkPassword = watch("password");
 
   const onSubmit = (data: unknown) => {
-    navigate("/login");
+    navigate("/");
   };
   return (
-    <Container>
+    <BlankCard>
       <Logo role="img" />
       <Title>Nova senha</Title>
 
@@ -46,7 +47,9 @@ const NewPasswordForm = () => {
         onSubmit={handleSubmit(onSubmit, () => setTimeout(clearErrors, 2500))}
       >
         <InputsContainer>
-          <FormInput type="text" placeholder="Informe o código" 
+          <FormInput
+            type="text"
+            placeholder="Informe o código"
             registerField={{
               ...register("code", {
                 required: { value: true, message: "O código é obrigatório!" },
@@ -56,9 +59,11 @@ const NewPasswordForm = () => {
                 },
               }),
             }}
-            error={errors?.code?.message} 
+            error={errors?.code?.message}
           />
-          <FormInput type="password" placeholder="Nova senha" 
+          <FormInput
+            type="password"
+            placeholder="Nova senha"
             registerField={{
               ...register("password", {
                 required: { value: true, message: "A senha é obrigatória!" },
@@ -68,35 +73,45 @@ const NewPasswordForm = () => {
                 },
               }),
             }}
-            error={errors?.password?.message} 
+            error={errors?.password?.message}
           />
-          <FormInput type="password" placeholder="Confirmar a senha" registerField={{
-            ...register("confirmPassword", {
-              required: { value: true, message: "A senha é obrigatória!" },
-              minLength: {
-                value: 6,
-                message: "A senha deve conter pelo menos 6 dígitos!",
-              },
-              validate: value => value === checkPassword || "As senhas devem ser iguais!"
-            }),
-          }}
-            error={errors?.confirmPassword?.message} />
+          <FormInput
+            type="password"
+            placeholder="Confirmar a senha"
+            registerField={{
+              ...register("confirmPassword", {
+                required: { value: true, message: "A senha é obrigatória!" },
+                minLength: {
+                  value: 6,
+                  message: "A senha deve conter pelo menos 6 dígitos!",
+                },
+                validate: (value) =>
+                  value === checkPassword || "As senhas devem ser iguais!",
+              }),
+            }}
+            error={errors?.confirmPassword?.message}
+          />
         </InputsContainer>
 
         <ButtonContainer>
-          <FormButton onClick={handleSubmit(onSubmit, () => setTimeout(clearErrors, 2500))} title="Salvar" />
+          <FormButton
+            onClick={handleSubmit(onSubmit, () =>
+              setTimeout(clearErrors, 2500)
+            )}
+            title="Salvar"
+          />
         </ButtonContainer>
 
         <RememberContainer>
           <RememberPassword>Lembrou sua Senha?</RememberPassword>
           <FormButton
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/")}
             alternative
             title="Entrar com as credenciais"
           />
         </RememberContainer>
       </FormContainer>
-    </Container>
+    </BlankCard>
   );
 };
 

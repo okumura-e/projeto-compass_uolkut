@@ -1,16 +1,17 @@
-import { Container, ImageContainer, IconHolder } from "./styles";
+import BlankCard from "../BlankCard";
+import { ImageContainer, IconHolder } from "./styles";
 import { BiUser, BiSolidPencil } from "react-icons/bi";
 
 const EditUserCard = () => {
   return (
-    <Container>
+    <BlankCard>
       <ImageContainer>
         <BiUser />
         <IconHolder>
           <BiSolidPencil />
         </IconHolder>
       </ImageContainer>
-    </Container>
+    </BlankCard>
   );
 };
 

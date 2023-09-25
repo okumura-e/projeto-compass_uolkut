@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
 import {
-  Container,
   FormContainer,
   Logo,
   Title,
@@ -13,6 +12,7 @@ import {
 
 import { useNavigate } from "react-router-dom";
 import CustomSelect from "../../CustomSelect";
+import BlankCard from "../../cards/BlankCard";
 
 const FirstStepForm = () => {
   const navigate = useNavigate();
@@ -56,7 +56,7 @@ const FirstStepForm = () => {
   };
 
   return (
-    <Container>
+    <BlankCard>
       <Logo role="img" />
       <Title>Cadastre-se no UOLkut</Title>
       <FormContainer onSubmit={handleSubmit(onSubmit, handleError)}>
@@ -158,7 +158,7 @@ const FirstStepForm = () => {
           <FormButton title="Criar conta" />
         </ButtonContainer>
       </FormContainer>
-    </Container>
+    </BlankCard>
   );
 };
 

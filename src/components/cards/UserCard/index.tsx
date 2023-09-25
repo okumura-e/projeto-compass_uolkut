@@ -1,4 +1,5 @@
-import { Container, ImageContainer, Fullname, Details } from "./styles";
+import BlankCard from "../BlankCard";
+import { ImageContainer, Fullname, Details } from "./styles";
 import { BiUser } from "react-icons/bi";
 
 interface UserCardProps {
@@ -9,7 +10,7 @@ interface UserCardProps {
 
 const UserCard = ({ fullname, location, maritalStatus }: UserCardProps) => {
   return (
-    <Container>
+    <BlankCard>
       <ImageContainer>
         <BiUser />
       </ImageContainer>
@@ -17,7 +18,7 @@ const UserCard = ({ fullname, location, maritalStatus }: UserCardProps) => {
       <Details>
         {maritalStatus}, {location}
       </Details>
-    </Container>
+    </BlankCard>
   );
 };
 

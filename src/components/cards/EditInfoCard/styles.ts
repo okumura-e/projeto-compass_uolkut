@@ -1,32 +1,5 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.article`
-  ${({ theme }) => {
-    return css`
-      display: flex;
-      flex-direction: column;
-      max-width: 320px;
-
-      width: 100%;
-
-      padding: 2.4rem 3rem 0 3rem;
-      color: ${theme.colors.content};
-
-      background: ${theme.colors.secondaryBg};
-      border-radius: 16px;
-
-      min-height: 940px;
-
-      ${theme.medias.tablet} {
-        padding: 3.2rem 4.6rem 0 4.6rem;
-        max-width: 600px;
-        min-height: 850px;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-      }
-    `;
-  }}
-`;
-
 export const Title = styled.h2`
   ${({ theme }) => {
     return css`
