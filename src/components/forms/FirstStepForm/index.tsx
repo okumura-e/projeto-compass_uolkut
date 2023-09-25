@@ -52,7 +52,7 @@ const FirstStepForm = () => {
       setTimeout(() => (selectRef.current.hasError = false), 2500);
       return;
     }
-
+    api.post("/users", {...data, maritalStatus: selectRef.current.value})
     navigate("/profile");
   };
 
