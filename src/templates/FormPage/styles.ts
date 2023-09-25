@@ -69,3 +69,31 @@ export const Text = styled.p`
   max-width: 600px;
   z-index: 3;
 `;
+
+export const Footer = styled.footer`
+  ${({ theme }) => {
+    return css`
+      display: none;
+      background: ${theme.colors.secondaryBg};
+
+      min-height: 48px;
+
+      ${theme.medias.desktop} {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    `;
+  }}
+`;
+
+export const FooterText = styled.p`
+  ${({ theme }) => {
+    return css`
+      color: ${theme.colors.primary};
+
+      font-size: 1.8rem;
+      text-align: center;
+    `;
+  }}
+`;
