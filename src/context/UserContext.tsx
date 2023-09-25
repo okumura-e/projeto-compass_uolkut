@@ -2,6 +2,8 @@ import { createContext, useState } from "react";
 
 interface IUserState {
   id?: string;
+  email: string;
+  password: string;
   fullname: string;
   birthday: string;
   city: string;
@@ -16,19 +18,8 @@ interface IUserState {
   job: string;
 }
 
-const defaultState = {
-  fullname: "Gabriel Barbosa",
-  thought: "Programar sem café é igual poeta sem poesia.",
-  birthday: "2001-07-21",
-  city: "Guarantã",
-  state: "São Paulo",
-  country: "Brasil",
-  job: "Programador",
-  maritalStatus: "Solteiro",
-};
-
 export const UserContext = createContext(
-  {} as { user: IUserState; setUser: (data?: IUserState) => void }
+  {} as { user: IUserState | undefined; setUser: (data?: IUserState) => void }
 );
 
 interface UserContextProviderProps {
@@ -36,7 +27,7 @@ interface UserContextProviderProps {
 }
 
 const UserContextProvider = ({ children }: UserContextProviderProps) => {
-  const [user, setUser] = useState(defaultState);
+  const [user, setUser] = useState<IUserState>();
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
