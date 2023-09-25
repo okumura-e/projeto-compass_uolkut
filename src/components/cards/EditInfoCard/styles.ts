@@ -5,7 +5,7 @@ export const Title = styled.h2`
     return css`
       color: ${theme.colors.primary};
       font-weight: 600;
-      font-size: 3.2rem;
+      font-size: 2rem;
 
       text-align: center;
 
@@ -22,13 +22,9 @@ export const Title = styled.h2`
 export const Form = styled.form`
   ${({ theme }) => {
     return css`
-      display: grid;
-      grid-template-columns: 1fr;
-
-      ${theme.medias.desktop} {
-        grid-template-columns: repeat(2, minmax(180px, 270px));
-        gap: 1rem;
-      }
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
     `;
   }}
 `;
@@ -40,8 +36,20 @@ export const Fieldset = styled.fieldset`
       display: flex;
       flex-direction: column;
 
-      gap: 2rem;
-      margin-bottom: 4rem;
+      gap: 1.5rem;
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        flex-direction: row;
+      }
+
+      &:last-child {
+        margin-bottom: 4rem;
+      }
+
+      ${theme.medias.desktop} {
+        flex-direction: row;
+      }
     `;
   }}
 `;
