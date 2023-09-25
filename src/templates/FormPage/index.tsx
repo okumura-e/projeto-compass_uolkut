@@ -1,4 +1,5 @@
 import React from "react";
+import { Toaster } from "react-hot-toast";
 import { Container, LeftSection, Text, Footer, FooterText } from "./styles";
 import FormPageHeader from "../../components/FormPageHeader";
 import { Outlet } from "react-router-dom";
@@ -7,6 +8,7 @@ function FormPage() {
   return (
     <>
       <FormPageHeader />
+      <Toaster />
       <Container>
         <LeftSection>
           <Text>
