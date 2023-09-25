@@ -18,19 +18,12 @@
         {
           "id": 1,
           "name": "Músicas",
-          "tags": [
-            "Trap",
-            "Rap",
-            "Indie"
-          ]
+          "tags": ["Trap", "Rap", "Indie"]
         },
         {
           "id": 2,
           "name": "Filmes",
-          "tags": [
-            "A Rede Social",
-            "Meu amigo tororo"
-          ]
+          "tags": ["A Rede Social", "Meu amigo tororo"]
         }
       ]
     },
@@ -51,27 +44,20 @@
         {
           "id": 1,
           "name": "Músicas",
-          "tags": [
-            "Trap",
-            "Rap",
-            "Indie"
-          ]
+          "tags": ["Trap", "Rap", "Indie"]
         },
         {
           "id": 2,
           "name": "Filmes",
-          "tags": [
-            "A Rede Social",
-            "Meu amigo tororo"
-          ]
+          "tags": ["A Rede Social", "Meu amigo tororo"]
         }
       ],
       "id": "AsqDtqh"
     },
     {
       "email": "felipesouza036@gmail.com",
-      "password": "1231231231321312",
-      "name": "FELIPE DE SOUZA ALVES",
+      "password": "123456",
+      "fullname": "Felipe Souza",
       "birthday": "2003-07-04",
       "job": "Desenvolvedor",
       "country": "Brasil",
