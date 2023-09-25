@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
+import { api } from "../../../config/api";
+import toast from "react-hot-toast";
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
 import {
@@ -13,13 +15,12 @@ import {
 import { useNavigate } from "react-router-dom";
 import CustomSelect from "../../CustomSelect";
 import BlankCard from "../../cards/BlankCard";
-import { api } from "../../../config/api";
 
 const FirstStepForm = () => {
   const navigate = useNavigate();
   const {
     clearErrors,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     handleSubmit,
     register,
   } = useForm({
@@ -46,14 +47,26 @@ const FirstStepForm = () => {
     }, 2500);
   };
 
-  const onSubmit = (data: unknown) => {
+  const onSubmit = async (data: unknown) => {
     if (!selectRef.current.value) {
       selectRef.current.hasError = true;
       setTimeout(() => (selectRef.current.hasError = false), 2500);
       return;
     }
-    api.post("/users", {...data, maritalStatus: selectRef.current.value})
-    navigate("/profile");
+    try {
+      const response = await api.post("/users", {
+        ...data,
+        maritalStatus: selectRef.current.value,
+      });
+
+      if (response.status !== 201) {
+        toast.error("Erro de servidor, por favor, tente novamente!");
+        return;
+      }
+      navigate("/profile");
+    } catch (err) {
+      toast.error("Erro de servidor, por favor, tente novamente!");
+    }
   };
 
   return (
@@ -156,7 +169,11 @@ const FirstStepForm = () => {
           hasError={selectRef.current.hasError}
         />
         <ButtonContainer>
-          <FormButton title="Criar conta" />
+          <FormButton
+            disabled={isSubmitting}
+            isLoading={isSubmitting}
+            title="Criar conta"
+          />
         </ButtonContainer>
       </FormContainer>
     </BlankCard>
