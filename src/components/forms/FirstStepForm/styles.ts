@@ -12,10 +12,10 @@ export const FormContainer = styled.form`
 
       flex: 1;
 
-      padding-bottom: 2.4rem;
-
       ${theme.medias.desktop} {
         flex: initial;
+        justify-content: flex-start;
+        min-height: initial;
         padding-bottom: 0;
       }
     `;
@@ -32,6 +32,8 @@ export const Logo = styled.span`
       border-radius: 50%;
 
       margin-bottom: 0.8rem;
+
+      flex-shrink: 0;
     `;
   }}
 `;
@@ -70,6 +72,10 @@ export const ButtonContainer = styled.div`
       align-items: flex-end;
       width: 100%;
       margin-top: auto;
+      ${theme.medias.desktop} {
+        height: initial;
+        margin-top: initial;
+      }
     `;
   }}
 `;

@@ -12,7 +12,7 @@ import {
 
 import { useNavigate } from "react-router-dom";
 import CustomSelect from "../../CustomSelect";
-import FormCard from "../FormCard";
+import BlankCard from "../../BlankCard";
 
 const FirstStepForm = () => {
   const navigate = useNavigate();
@@ -56,7 +56,7 @@ const FirstStepForm = () => {
   };
 
   return (
-    <FormCard>
+    <BlankCard>
       <Logo role="img" />
       <Title>Cadastre-se no UOLkut</Title>
       <FormContainer onSubmit={handleSubmit(onSubmit, handleError)}>
@@ -158,7 +158,7 @@ const FirstStepForm = () => {
           <FormButton title="Criar conta" />
         </ButtonContainer>
       </FormContainer>
-    </FormCard>
+    </BlankCard>
   );
 };
 
