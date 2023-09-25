@@ -23,7 +23,7 @@ export const Select = styled.button<SelectProps>`
       justify-content: space-between;
       align-items: center;
 
-      min-height: 50px;
+      min-height: 37px;
 
       background: ${theme.colors.lightGray};
       border: 1px solid transparent;
@@ -68,6 +68,9 @@ export const Select = styled.button<SelectProps>`
               transform: rotate(0deg);
             }
           `}
+      ${theme.medias.desktop} {
+        min-height: 50px;
+      }
     `;
   }}
 `;
