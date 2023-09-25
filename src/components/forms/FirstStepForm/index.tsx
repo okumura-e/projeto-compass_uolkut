@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { useForm } from "react-hook-form";
+import { UserContext } from "../../../context/UserContext";
 import { api } from "../../../config/api";
 import toast from "react-hot-toast";
 import FormButton from "../../FormButton";
@@ -17,6 +18,7 @@ import CustomSelect from "../../CustomSelect";
 import BlankCard from "../../cards/BlankCard";
 
 const FirstStepForm = () => {
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const {
     clearErrors,
@@ -27,11 +29,11 @@ const FirstStepForm = () => {
     defaultValues: {
       email: "",
       password: "",
-      name: "",
+      fullname: "",
       birthday: "",
       job: "",
       country: "",
-      city: "",
+      state: "",
     },
   });
 
@@ -54,15 +56,18 @@ const FirstStepForm = () => {
       return;
     }
     try {
-      const response = await api.post("/users", {
+      const userData = {
         ...data,
         maritalStatus: selectRef.current.value,
-      });
+      };
+      const response = await api.post("/users", userData);
 
       if (response.status !== 201) {
         toast.error("Erro de servidor, por favor, tente novamente!");
         return;
       }
+      setUser(userData);
+      sessionStorage.setItem("user", JSON.stringify(userData));
       navigate("/profile");
     } catch (err) {
       toast.error("Erro de servidor, por favor, tente novamente!");
@@ -104,11 +109,11 @@ const FirstStepForm = () => {
         />
         <FormInput
           registerField={{
-            ...register("name", {
+            ...register("fullname", {
               required: { value: true, message: "O nome é obrigatório!" },
             }),
           }}
-          error={errors?.name?.message}
+          error={errors?.fullname?.message}
           placeholder="Nome"
         />
         <RowContainer>
@@ -145,11 +150,11 @@ const FirstStepForm = () => {
           />
           <FormInput
             registerField={{
-              ...register("city", {
+              ...register("state", {
                 required: { value: true, message: "Cidade é obrigatório!" },
               }),
             }}
-            error={errors?.city?.message}
+            error={errors?.state?.message}
             placeholder="Cidade"
           />
         </RowContainer>

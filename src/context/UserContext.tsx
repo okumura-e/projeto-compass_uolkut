@@ -19,20 +19,12 @@ interface IUserState {
 const defaultState = {
   fullname: "Gabriel Barbosa",
   thought: "Programar sem café é igual poeta sem poesia.",
-  fansAmount: 85,
-  trustable: 2,
-  coolness: 3,
-  attractive: 2,
-  birthday: "21 de Julho",
+  birthday: "2001-07-21",
   city: "Guarantã",
   state: "São Paulo",
   country: "Brasil",
   job: "Programador",
   maritalStatus: "Solteiro",
-  categories: [
-    { id: 1, name: "Músicas", tags: ["Trap", "Rap", "Indie"] },
-    { id: 2, name: "Filmes", tags: ["A Rede Social", "Meu amigo tororo"] },
-  ],
 };
 
 export const UserContext = createContext(
