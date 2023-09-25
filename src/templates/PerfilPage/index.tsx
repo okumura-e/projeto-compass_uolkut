@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { Container, CardSection, PseudoSection } from "./styles";
 import EditPerfilButton from "../../components/EditPerfilButton";
 import FeedSmallCard from "../../components/cards/FeedSmallCard";
@@ -6,7 +5,6 @@ import MainCard from "../../components/cards/MainCard";
 import PerfilHeader from "../../components/PerfilHeader";
 import UserCard from "../../components/cards/UserCard";
 import SearchInput from "../../components/SearchInput";
-import { UserContext } from "../../context/UserContext";
 import { formateDate } from "../../utils/formateDate";
 import { useKeepUser } from "../../hooks/useKeepUser";
 
