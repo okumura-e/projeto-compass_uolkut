@@ -28,23 +28,25 @@ const mock = {
 };
 
 const PerfilPage = () => {
-  const { user } = useKeepUser();
+  const { user, navigate } = useKeepUser();
+
+  if (!user) return <></>;
 
   return (
     <>
-      <PerfilHeader username={user.fullname} />
+      <PerfilHeader username={user?.fullname} />
       <Container>
         <SearchInput />
         <CardSection>
-          <UserCard {...user} location={user.country} />
-          <EditPerfilButton />
+          <UserCard {...user} location={user?.country} />
+          <EditPerfilButton onClick={() => navigate("/edit-profile")} />
         </CardSection>
         <PseudoSection>
           <MainCard
             {...user}
-            birthday={formateDate(user.birthday)}
+            birthday={formateDate(user?.birthday)}
             age={
-              new Date().getFullYear() - new Date(user.birthday).getFullYear()
+              new Date().getFullYear() - new Date(user?.birthday).getFullYear()
             }
             {...mock}
           />
