@@ -51,11 +51,11 @@ function FeedSmallCard({ title, type }: FeedSmallCardProps) {
       {type === "friends" && (
         <Grid>
           {users.map((user, index) => (
-            <Profile>
+            <Profile key={index}>
               <ProfilePhoto>
                 <Icon />
               </ProfilePhoto>
-              <Name key={index}>{user}</Name>
+              <Name>{user}</Name>
             </Profile>
           ))}
         </Grid>
@@ -64,11 +64,11 @@ function FeedSmallCard({ title, type }: FeedSmallCardProps) {
       {type === "community" && (
         <Grid>
           {comunities.map((comunities, index) => (
-            <Profile>
+            <Profile key={index}>
               <CommunityPhoto>
                 <CommunityIcon />
               </CommunityPhoto>
-              <Name key={index}>{comunities}</Name>
+              <Name>{comunities}</Name>
             </Profile>
           ))}
         </Grid>

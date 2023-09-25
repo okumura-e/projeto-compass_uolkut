@@ -7,30 +7,46 @@ import PerfilHeader from "../../components/PerfilHeader";
 import UserCard from "../../components/cards/UserCard";
 import SearchInput from "../../components/SearchInput";
 import { UserContext } from "../../context/UserContext";
+import { formateDate } from "../../utils/formateDate";
+import { useKeepUser } from "../../hooks/useKeepUser";
+
+const mock = {
+  trustable: 2,
+  coolness: 3,
+  attractive: 2,
+  fansAmount: 85,
+  thought: "Programar sem café é igual poeta sem poesia.",
+  city: "Guarantã",
+  categories: [
+    { id: 1, name: "Músicas", tags: ["Trap", "Rap", "Indie"] },
+    {
+      id: 2,
+      name: "Filmes",
+      tags: ["A Rede Social", "Meu amigo tororo"],
+    },
+  ],
+};
 
 const PerfilPage = () => {
-  const { user } = useContext(UserContext);
+  const { user } = useKeepUser();
 
   return (
     <>
-      <PerfilHeader username="Gabriel Barbosa" />
+      <PerfilHeader username={user.fullname} />
       <Container>
         <SearchInput />
         <CardSection>
-          <UserCard
-            fullname="Gabriel Barbosa"
-            location="Brasil"
-            maritalStatus="Solteiro"
-          />
+          <UserCard {...user} location={user.country} />
           <EditPerfilButton />
         </CardSection>
         <PseudoSection>
           <MainCard
             {...user}
-            trustable={2}
-            coolness={3}
-            attractive={2}
-            fansAmount={85}
+            birthday={formateDate(user.birthday)}
+            age={
+              new Date().getFullYear() - new Date(user.birthday).getFullYear()
+            }
+            {...mock}
           />
           <FeedSmallCard title="Amigos(248)" type="friends" />
           <FeedSmallCard title="Comunidade(42)" type="community" />

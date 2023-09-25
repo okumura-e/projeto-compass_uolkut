@@ -69,8 +69,8 @@ const MainCard = ({
           <StatisticData>
             {Array(trustable)
               .fill(0)
-              .map(() => (
-                <BsEmojiSmile color="#FACF41" />
+              .map((_, index) => (
+                <BsEmojiSmile key={index.toString()} color="#FACF41" />
               ))}
           </StatisticData>
         </Statistic>
@@ -79,8 +79,8 @@ const MainCard = ({
           <StatisticData>
             {Array(coolness)
               .fill(0)
-              .map(() => (
-                <FiThumbsUp color="#26CAFF" />
+              .map((_, index) => (
+                <FiThumbsUp key={index.toString()} color="#26CAFF" />
               ))}
           </StatisticData>
         </Statistic>
@@ -89,8 +89,8 @@ const MainCard = ({
           <StatisticData>
             {Array(attractive)
               .fill(0)
-              .map(() => (
-                <AiOutlineHeart color="#ED2590" />
+              .map((_, index) => (
+                <AiOutlineHeart key={index.toString()} color="#ED2590" />
               ))}
           </StatisticData>
         </Statistic>

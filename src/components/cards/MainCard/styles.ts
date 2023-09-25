@@ -155,7 +155,7 @@ export const PreferencesContainer = styled.section`
   }}
 `;
 
-export const Preference = styled.p`
+export const Preference = styled.article`
   ${({ theme }) => {
     return css`
       display: flex;
