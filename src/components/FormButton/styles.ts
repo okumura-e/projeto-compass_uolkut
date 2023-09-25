@@ -11,17 +11,22 @@ export const Button = styled.button<ButtonProps>`
         ? css`
             background-color: ${theme.colors.lightGray};
             color: ${theme.colors.primary};
-            &:hover {
+            &:not(:disabled):hover {
               filter: brightness(0.97);
             }
           `
         : css`
             background-color: ${theme.colors.primary};
             color: white;
-            &:hover {
+            &:not(:disabled):hover {
               background-color: ${theme.colors.primaryHover};
             }
           `}
+
+      &:disabled {
+        background: ${theme.colors.primaryDisabled};
+        cursor: not-allowed;
+      }
       width: 100%;
       border-radius: 8px;
       height: 3.7rem;

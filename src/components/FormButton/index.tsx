@@ -1,16 +1,25 @@
+import Loader from "../Loader";
 import { Button } from "./styles";
 
 interface ButtonProps {
   title: string;
+  disabled?: boolean;
+  isLoading?: boolean;
   alternative?: boolean;
   onClick?: () => void;
 }
 
-function FormButton({ title, alternative, onClick }: ButtonProps) {
+function FormButton({
+  title,
+  alternative,
+  disabled,
+  isLoading,
+  onClick,
+}: ButtonProps) {
   return (
     <>
-      <Button onClick={onClick} alternative={alternative}>
-        {title}
+      <Button disabled={disabled} onClick={onClick} alternative={alternative}>
+        {isLoading ? <Loader /> : title}
       </Button>
     </>
   );
