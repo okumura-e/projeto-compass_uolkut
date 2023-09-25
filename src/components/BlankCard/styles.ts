@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.section`
   ${({ theme }) => {
@@ -10,7 +10,6 @@ export const Container = styled.section`
       border-radius: 16px;
       flex-direction: column;
 
-      flex-shrink: 0;
       height: 100%;
     `;
   }}
