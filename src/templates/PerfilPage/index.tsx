@@ -16,7 +16,7 @@ const mock = {
   attractive: 2,
   fansAmount: 85,
   thought: "Programar sem café é igual poeta sem poesia.",
-  city: "Guarantã",
+  state: "Guarantã",
   categories: [
     { id: 1, name: "Músicas", tags: ["Trap", "Rap", "Indie"] },
     {

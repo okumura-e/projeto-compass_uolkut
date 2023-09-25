@@ -109,13 +109,13 @@ const MainCard = ({
           Quem sou eu: <strong>{job}</strong>
         </Detail>
         <Detail>
-          Moro: <strong>{city}</strong>
+          Moro: <strong>{state}</strong>
         </Detail>
         <Detail>
           País: <strong>{country}</strong>
         </Detail>
         <Detail>
-          Cidade: <strong>{state}</strong>
+          Cidade: <strong>{city}</strong>
         </Detail>
       </DetailsDataContainer>
       <PreferencesContainer>
