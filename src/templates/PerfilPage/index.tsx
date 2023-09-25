@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { Container, CardSection, PseudoSection } from "./styles";
 import EditPerfilButton from "../../components/EditPerfilButton";
 import FeedSmallCard from "../../components/cards/FeedSmallCard";
@@ -5,28 +6,11 @@ import MainCard from "../../components/cards/MainCard";
 import PerfilHeader from "../../components/PerfilHeader";
 import UserCard from "../../components/cards/UserCard";
 import SearchInput from "../../components/SearchInput";
-
-const mock = {
-  fullname: "Gabriel Barbosa",
-  thought: "Programar sem café é igual poeta sem poesia.",
-  fansAmount: 85,
-  trustable: 2,
-  coolness: 3,
-  attractive: 2,
-  age: 22,
-  birthday: "21 de Julho",
-  city: "Guarantã",
-  state: "São Paulo",
-  country: "Brasil",
-  job: "Programador",
-  maritalStatus: "Solteiro",
-  categories: [
-    { id: 1, name: "Músicas", tags: ["Trap", "Rap", "Indie"] },
-    { id: 2, name: "Filmes", tags: ["A Rede Social", "Meu amigo tororo"] },
-  ],
-};
+import { UserContext } from "../../context/UserContext";
 
 const PerfilPage = () => {
+  const { user } = useContext(UserContext);
+
   return (
     <>
       <PerfilHeader username="Gabriel Barbosa" />
@@ -41,7 +25,13 @@ const PerfilPage = () => {
           <EditPerfilButton />
         </CardSection>
         <PseudoSection>
-          <MainCard {...mock} />
+          <MainCard
+            {...user}
+            trustable={2}
+            coolness={3}
+            attractive={2}
+            fansAmount={85}
+          />
           <FeedSmallCard title="Amigos(248)" type="friends" />
           <FeedSmallCard title="Comunidade(42)" type="community" />
         </PseudoSection>

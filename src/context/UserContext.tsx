@@ -1,5 +1,21 @@
 import { createContext, useState } from "react";
 
+interface IUserState {
+  id?: string;
+  fullname: string;
+  birthday: string;
+  city: string;
+  state: string;
+  country: string;
+  maritalStatus:
+    | "Solteiro"
+    | "Casado"
+    | "Divorciado"
+    | "Namorando"
+    | "Preocupado";
+  job: string;
+}
+
 const defaultState = {
   fullname: "Gabriel Barbosa",
   thought: "Programar sem café é igual poeta sem poesia.",
@@ -7,7 +23,6 @@ const defaultState = {
   trustable: 2,
   coolness: 3,
   attractive: 2,
-  age: 22,
   birthday: "21 de Julho",
   city: "Guarantã",
   state: "São Paulo",
@@ -20,7 +35,9 @@ const defaultState = {
   ],
 };
 
-export const UserContext = createContext({});
+export const UserContext = createContext(
+  {} as { user: IUserState; setUser: (data?: IUserState) => void }
+);
 
 interface UserContextProviderProps {
   children: React.ReactNode;
