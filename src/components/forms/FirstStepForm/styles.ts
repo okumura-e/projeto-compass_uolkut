@@ -6,9 +6,8 @@ export const FormContainer = styled.form`
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100%;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.6rem;
 
       flex: 1;
 
@@ -71,10 +70,9 @@ export const ButtonContainer = styled.div`
       height: 100%;
       align-items: flex-end;
       width: 100%;
-      margin-top: auto;
       ${theme.medias.desktop} {
         height: initial;
-        margin-top: initial;
+        margin-top: 3rem;
       }
     `;
   }}
