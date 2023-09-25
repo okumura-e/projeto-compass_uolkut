@@ -46,12 +46,12 @@ export const InputsContainer = styled.fieldset`
   border: none;
 `;
 
-export const ButtonContainer = styled.section`
+export const ButtonContainer = styled.div`
   width: 100%;
   margin-top: 2rem;
 `;
 
-export const RememberContainer = styled.section`
+export const RememberContainer = styled.div`
   ${({ theme }) => {
     return css`
       display: flex;
