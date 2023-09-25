@@ -11,6 +11,8 @@ export const Container = styled.main`
       margin: 0 auto;
       padding: 3.2rem 2rem;
 
+      width: 100%;
+
       gap: 3.2rem;
 
       @media screen and (min-width: 1200px) {
