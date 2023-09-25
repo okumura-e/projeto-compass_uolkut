@@ -17,5 +17,5 @@ export function useKeepUser() {
     }
   }, [user]);
 
-  return { user, setUser };
+  return { user, setUser, navigate };
 }
