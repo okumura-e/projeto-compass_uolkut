@@ -22,6 +22,24 @@ export const Container = styled.main`
       ${theme.medias.desktop} {
         margin: auto;
       }
+
+      & > section:nth-child(2) {
+        align-items: center;
+        max-width: 320px;
+        height: 580px;
+
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media screen and (min-width: 800px) {
+        & section:nth-child(2) {
+          align-items: center;
+          max-width: 380px;
+
+          height: 600px;
+        }
+      }
     `;
   }}
 `;
