@@ -1,9 +1,17 @@
 import styled, {css} from "styled-components";
 
 export const Container = styled.section`
-${({ theme }) => {
+  ${({ theme }) => {
+    return css`
+      background-color: ${theme.colors.secondaryBg};
+      display: flex;
+      width: 100%;
+      padding: 2.4rem;
+      border-radius: 16px;
+      flex-direction: column;
 
-    return css``
-   
-   }}
-`
+      flex-shrink: 0;
+      height: 100%;
+    `;
+  }}
+`;

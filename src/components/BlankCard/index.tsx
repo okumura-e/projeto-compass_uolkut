@@ -5,10 +5,8 @@ interface BlankCardProps{
 }
 
 const BlankCard = ({children}: BlankCardProps) => {
-    
     return(
         <Container>
-
             {children}
         </Container>
     )
