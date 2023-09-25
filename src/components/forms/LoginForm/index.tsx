@@ -8,18 +8,22 @@ import {
 } from "./styles";
 
 import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
 import { useForm } from "react-hook-form";
-// import FormCard from "../FormCard";
 import BlankCard from "../../cards/BlankCard";
+import { api } from "../../../config/api";
+import { useContext } from "react";
+import { UserContext } from "../../../context/UserContext";
 
 const LoginForm = () => {
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const {
     clearErrors,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     handleSubmit,
     register,
   } = useForm({
@@ -29,8 +33,22 @@ const LoginForm = () => {
     },
   });
 
-  const onSubmit = (data: unknown) => {
-    navigate("/profile");
+  const onSubmit = async (data: unknown) => {
+    try {
+      const { data: user } = await api.get(
+        `users?email=${data.email}&password=${data.password}`
+      );
+
+      if (user.length) {
+        setUser(user[0]);
+        sessionStorage.setItem("user", JSON.stringify(user[0]));
+        navigate("/profile");
+      } else {
+        toast.error("Dados inválidos, tente novamente!");
+      }
+    } catch (err) {
+      toast.error("Erro ao efetuar login, tente novamente!");
+    }
   };
 
   return (
@@ -72,7 +90,11 @@ const LoginForm = () => {
           <CheckBox />
           <Label htmlFor="rememberMe">Lembrar minha senha</Label>
         </CheckBoxContainer>
-        <FormButton title="Entrar" />
+        <FormButton
+          disabled={isSubmitting}
+          isLoading={isSubmitting}
+          title="Entrar"
+        />
         <FormButton
           onClick={() => navigate("/register")}
           alternative
