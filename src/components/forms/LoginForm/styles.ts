@@ -9,6 +9,20 @@ export const FormContainer = styled.form`
       justify-content: center;
       width: 100%;
       gap: 2rem;
+
+      & + a {
+        font-size: 1.4rem;
+        color: ${theme.colors.primary};
+        text-decoration: underline;
+
+        margin-top: 3.2rem;
+
+        transition: color 0.2s ease-in-out;
+      }
+
+      & + a:hover {
+        color: ${theme.colors.primaryHover};
+      }
     `;
   }}
 `;

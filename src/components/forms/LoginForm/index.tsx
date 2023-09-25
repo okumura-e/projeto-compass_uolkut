@@ -12,7 +12,8 @@ import { Link, useNavigate } from "react-router-dom";
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
 import { useForm } from "react-hook-form";
-import FormCard from "../FormCard";
+// import FormCard from "../FormCard";
+import BlankCard from "../../BlankCard";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -33,13 +34,15 @@ const LoginForm = () => {
   };
 
   return (
-    <FormCard>
+    <BlankCard>
       <Logo role="img" />
       <Title>Cadastre-se no UOLkut</Title>
       <FormContainer
         onSubmit={handleSubmit(onSubmit, () => setTimeout(clearErrors, 2500))}
       >
-        <FormInput type="email" placeholder="Email"
+        <FormInput
+          type="email"
+          placeholder="Email"
           registerField={{
             ...register("email", {
               required: { value: true, message: "O email é obrigatório!" },
@@ -51,7 +54,9 @@ const LoginForm = () => {
           }}
           error={errors?.email?.message}
         />
-        <FormInput type="password" placeholder="Senha"
+        <FormInput
+          type="password"
+          placeholder="Senha"
           registerField={{
             ...register("password", {
               required: { value: true, message: "A senha é obrigatória!" },
@@ -75,7 +80,7 @@ const LoginForm = () => {
         />
       </FormContainer>
       <Link to="/forgot-password">Esqueci minha senha</Link>
-    </FormCard>
+    </BlankCard>
   );
 };
 
