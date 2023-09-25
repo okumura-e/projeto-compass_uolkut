@@ -13,6 +13,8 @@ export const Container = styled.main`
 
       max-width: 1200px;
 
+      width: 100%;
+
       margin: 0 auto;
       margin-top: 8rem;
 
@@ -72,34 +74,38 @@ export const PseudoSection = styled.section`
       width: 100%;
       max-width: 320px;
 
-      article + section {
+      & > section:nth-child(1) {
+        order: 2;
+
+        min-height: 900px;
+      }
+
+      & > section:nth-child(2) {
         order: 1;
       }
 
-      article {
-        order: 2;
-      }
-
-      section + section {
+      & > section:nth-child(3) {
         order: 3;
       }
 
       @media screen and (min-width: 800px) {
         max-width: initial;
         grid-template-columns: minmax(320px, 600px) minmax(160px, 280px);
-        grid-template-rows: 2;
+        grid-template-rows: 400px 400px;
 
-        article {
+        & > section:nth-child(1) {
           order: initial;
           grid-row-start: 1;
           grid-row-end: 3;
+
+          min-height: initial;
         }
 
-        article + section {
+        & > section:nth-child(2) {
           order: initial;
         }
 
-        section + section {
+        & > section:nth-child(3) {
           order: initial;
         }
       }
