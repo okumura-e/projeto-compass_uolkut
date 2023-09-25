@@ -1,5 +1,4 @@
 import {
-  Container,
   Title,
   Thought,
   StatisticsContainer,
@@ -18,6 +17,7 @@ import {
 import { FiThumbsUp } from "react-icons/fi";
 import { BsEmojiSmile } from "react-icons/bs";
 import { AiOutlineStar, AiOutlineHeart } from "react-icons/ai";
+import BlankCard from "../BlankCard";
 
 interface MainCardProps {
   fullname: string;
@@ -53,7 +53,7 @@ const MainCard = ({
   categories,
 }: MainCardProps) => {
   return (
-    <Container>
+    <BlankCard>
       <Title>Boa tarde, {fullname}</Title>
       <Thought>{thought}</Thought>
       <StatisticsContainer>
@@ -131,7 +131,7 @@ const MainCard = ({
           </Preference>
         ))}
       </PreferencesContainer>
-    </Container>
+    </BlankCard>
   );
 };
 

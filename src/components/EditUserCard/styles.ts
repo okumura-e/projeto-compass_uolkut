@@ -1,32 +1,5 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.article`
-  ${({ theme }) => {
-    return css`
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      max-width: 320px;
-      width: 100%;
-
-      min-height: 260px;
-      max-height: 260px;
-      height: 100%;
-
-      border-radius: 16px;
-
-      background: ${theme.colors.secondaryBg};
-
-      color: ${theme.colors.content};
-
-      ${theme.medias.desktop} {
-        min-height: 325px;
-      }
-    `;
-  }}
-`;
 export const ImageContainer = styled.div`
   ${({ theme }) => {
     return css`
@@ -34,7 +7,8 @@ export const ImageContainer = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-
+      align-self: center;
+      
       width: 110px;
       height: 110px;
 
