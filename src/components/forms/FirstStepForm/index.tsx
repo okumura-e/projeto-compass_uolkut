@@ -13,6 +13,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import CustomSelect from "../../CustomSelect";
 import BlankCard from "../../cards/BlankCard";
+import { api } from "../../../config/api";
 
 const FirstStepForm = () => {
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ const FirstStepForm = () => {
       setTimeout(() => (selectRef.current.hasError = false), 2500);
       return;
     }
-    console.log("Dados: ", data);
+
     navigate("/profile");
   };
 
