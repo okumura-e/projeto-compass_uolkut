@@ -1,5 +1,4 @@
 import {
-  Container,
   Logo,
   Title,
   FormContainer,
@@ -13,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
 import {useForm} from "react-hook-form";
+import FormCard from "../FormCard";
 
 const ForgotPasswordForm = () => {
   const {
@@ -32,7 +32,7 @@ const ForgotPasswordForm = () => {
 
   const navigate = useNavigate();
   return (
-    <Container>
+    <FormCard>
       <Logo role="img" />
       <Title>Recupere sua senha</Title>
 
@@ -66,7 +66,7 @@ const ForgotPasswordForm = () => {
           />
         </RememberContainer>
       </FormContainer>
-    </Container>
+    </FormCard>
   );
 };
 

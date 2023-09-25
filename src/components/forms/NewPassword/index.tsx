@@ -1,5 +1,4 @@
 import {
-  Container,
   Logo,
   Title,
   FormContainer,
@@ -14,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
 import { useForm } from "react-hook-form";
+import FormCard from "../FormCard";
 
 const NewPasswordForm = () => {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ const NewPasswordForm = () => {
     navigate("/login");
   };
   return (
-    <Container>
+    <FormCard>
       <Logo role="img" />
       <Title>Nova senha</Title>
 
@@ -90,13 +90,13 @@ const NewPasswordForm = () => {
         <RememberContainer>
           <RememberPassword>Lembrou sua Senha?</RememberPassword>
           <FormButton
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/")}
             alternative
             title="Entrar com as credenciais"
           />
         </RememberContainer>
       </FormContainer>
-    </Container>
+    </FormCard>
   );
 };
 
