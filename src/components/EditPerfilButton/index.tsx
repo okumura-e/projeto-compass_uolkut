@@ -1,7 +1,11 @@
 import { Button } from "./styles";
 
-const EditPerfilButton = () => {
-  return <Button>Editar meu perfil</Button>;
+interface EditPerfilButtonProps {
+  onClick: () => void;
+}
+
+const EditPerfilButton = ({ onClick }: EditPerfilButtonProps) => {
+  return <Button onClick={onClick}>Editar meu perfil</Button>;
 };
 
 export default EditPerfilButton;
