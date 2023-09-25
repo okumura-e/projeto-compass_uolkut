@@ -11,8 +11,9 @@ import { useNavigate } from "react-router-dom";
 
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
-import {useForm} from "react-hook-form";
-import FormCard from "../FormCard";
+import { useForm } from "react-hook-form";
+// import FormCard from "../FormCard";
+import BlankCard from "../../BlankCard";
 
 const ForgotPasswordForm = () => {
   const {
@@ -25,21 +26,22 @@ const ForgotPasswordForm = () => {
       email: "",
     },
   });
-  
+
   const onSubmit = (data: unknown) => {
     navigate("/new-password");
   };
 
   const navigate = useNavigate();
   return (
-    <FormCard>
+    <BlankCard>
       <Logo role="img" />
       <Title>Recupere sua senha</Title>
 
       <FormContainer
         onSubmit={handleSubmit(onSubmit, () => setTimeout(clearErrors, 2500))}
       >
-        <FormInput registerField={{
+        <FormInput
+          registerField={{
             ...register("email", {
               required: { value: true, message: "O email é obrigatório!" },
               pattern: {
@@ -49,12 +51,17 @@ const ForgotPasswordForm = () => {
             }),
           }}
           error={errors?.email?.message}
-          type="email" 
-          placeholder="E-mail cadastrado" 
+          type="email"
+          placeholder="E-mail cadastrado"
         />
 
         <ButtonContainer>
-          <FormButton title="Enviar código" onClick={handleSubmit(onSubmit, () => setTimeout(clearErrors, 2500))} />
+          <FormButton
+            title="Enviar código"
+            onClick={handleSubmit(onSubmit, () =>
+              setTimeout(clearErrors, 2500)
+            )}
+          />
         </ButtonContainer>
 
         <RememberContainer>
@@ -66,7 +73,7 @@ const ForgotPasswordForm = () => {
           />
         </RememberContainer>
       </FormContainer>
-    </FormCard>
+    </BlankCard>
   );
 };
 

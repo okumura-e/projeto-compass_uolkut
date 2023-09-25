@@ -38,12 +38,12 @@ export const FormContainer = styled.form`
   width: 100%;
 `;
 
-export const ButtonContainer = styled.section`
+export const ButtonContainer = styled.div`
   width: 100%;
   margin-top: 3.8rem;
 `;
 
-export const RememberContainer = styled.section`
+export const RememberContainer = styled.div`
   ${({ theme }) => {
     return css`
       display: flex;
