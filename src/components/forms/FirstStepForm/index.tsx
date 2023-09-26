@@ -33,7 +33,7 @@ const FirstStepForm = () => {
       birthday: "",
       job: "",
       country: "",
-      state: "",
+      city: "",
     },
   });
 
@@ -150,11 +150,11 @@ const FirstStepForm = () => {
           />
           <FormInput
             registerField={{
-              ...register("state", {
+              ...register("city", {
                 required: { value: true, message: "Cidade é obrigatório!" },
               }),
             }}
-            error={errors?.state?.message}
+            error={errors?.city?.message}
             placeholder="Cidade"
           />
         </RowContainer>
