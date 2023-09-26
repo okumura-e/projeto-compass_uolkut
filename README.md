@@ -1,27 +1,58 @@
-# React + TypeScript + Vite
+# <img style="width: 32px; height: 32px; padding-top: 8px;" src="https://s3.amazonaws.com/gupy5/production/companies/417/career/35254/images/2021-11-05_19-02_logo.png" /> UOLKut PB Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## :pencil2: Description
 
-Currently, two official plugins are available:
+It's a alternative application, like the old "orkut", with auth forms, and a profile dashboard.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## :computer: How to run
 
-## Expanding the ESLint configuration
+After you clone the repository and do a `npm i` command to install all the required packages, it's only have a few more steps to run the application correctly.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+In this project we used a <strong>fake rest api</strong> made with `json-server`, and the only command you need to run to server is `npm run server`, make sure to run this command before start the project, if you don't do this, the project <strong style="color: red;">will not run correctly</strong>.
 
-- Configure the top-level `parserOptions` property like this:
+## :iphone: Main Techs
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+<div style="display: inline-block">
+   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+   <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" />
+</div>
+
+## :fireworks: Extra Techs
+
+- React hook form
+- React Hot Toast
+- Json Server
+
+## :page_facing_up: Pages
+
+- [x] FormPage - The pagination in this page it's made with 'Outlet' component from the `react-router-dom`, so when you change the "url", the only page part that changes it's the form
+- [x] Profile Page
+- [x] Edit Profile Page
+
+## :file_folder: Project Structure
+
+```
+├─── public
+├─── src
+│   ├─── api: Contains only the `db.json` file, the entire api runs by script
+│   ├─── components
+│   ├─── assets
+│   ├─── config
+│   ├─── context
+│   ├─── hooks
+│   ├─── templates: Contains the pages files
+│   └─── utils
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## :sparkles: Extra Features
+
+- Login and register forms with real authentication
+- Dynamic Data in profile with Context API and Session Storage
+- Responsiveness to almost all common screen sizes.
+- Error handling server-side, like services offline, or wrong credentials in login, using pop up, made with `react-hot-toast`.
+
+## :boom: Problems Faced
+
+We tried to keep a clean html structure, with the minimum div's or span's possible, and in components we tried to avoid to use JS logic to change the layout, keeping the layout changes more in the `styled-components` files, alternating css rules with custom props.
+
+Pages like the main profile page were more hard than we expected, do the grid management without add unnecessary html structure and manipulate only with css was a really good challenge.
