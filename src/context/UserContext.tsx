@@ -1,25 +1,8 @@
 import { createContext, useState } from "react";
-
-interface IUserState {
-  id?: string;
-  email: string;
-  password: string;
-  fullname: string;
-  birthday: string;
-  city: string;
-  state: string;
-  country: string;
-  maritalStatus:
-    | "Solteiro"
-    | "Casado"
-    | "Divorciado"
-    | "Namorando"
-    | "Preocupado";
-  job: string;
-}
+import { IUser } from "../interfaces/User";
 
 export const UserContext = createContext(
-  {} as { user: IUserState | undefined; setUser: (data?: IUserState) => void }
+  {} as { user: IUser | undefined; setUser: (data?: IUser) => void }
 );
 
 interface UserContextProviderProps {
@@ -27,7 +10,7 @@ interface UserContextProviderProps {
 }
 
 const UserContextProvider = ({ children }: UserContextProviderProps) => {
-  const [user, setUser] = useState<IUserState>();
+  const [user, setUser] = useState<IUser>();
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

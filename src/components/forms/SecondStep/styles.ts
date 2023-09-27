@@ -26,15 +26,11 @@ export const Container = styled.section`
   }}
 `;
 export const FormContainer = styled.form`
-  ${({ theme }) => {
-    return css`
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-    `;
-  }}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 `;
 
 export const Logo = styled.span`
@@ -64,10 +60,6 @@ export const Title = styled.h2`
 `;
 
 export const RowContainer = styled.div`
-  ${({ theme }) => {
-    return css`
-      display: flex;
-      gap: 2.5rem;
-    `;
-  }}
+  display: flex;
+  gap: 2.5rem;
 `;

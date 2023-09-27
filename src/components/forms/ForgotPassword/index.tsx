@@ -15,19 +15,19 @@ import { useForm } from "react-hook-form";
 // import FormCard from "../FormCard";
 import BlankCard from "../../cards/BlankCard";
 
+type FormValues = {
+  email: string;
+};
+
 const ForgotPasswordForm = () => {
   const {
     clearErrors,
     formState: { errors },
     handleSubmit,
     register,
-  } = useForm({
-    defaultValues: {
-      email: "",
-    },
-  });
+  } = useForm<FormValues>();
 
-  const onSubmit = (data: unknown) => {
+  const onSubmit = () => {
     navigate("/new-password");
   };
 

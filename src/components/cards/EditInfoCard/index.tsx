@@ -32,7 +32,9 @@ const EditInfoCard = () => {
     hasError: false,
   } as { value: string; hasError: boolean });
 
-  const onSubmit = (data: unknown) => {};
+  const onSubmit = (data: unknown) => {
+    return data;
+  };
 
   return (
     <BlankCard>
@@ -40,7 +42,6 @@ const EditInfoCard = () => {
       <Form
         onSubmit={handleSubmit(onSubmit, () => setTimeout(clearErrors, 2500))}
       >
-        {/* <InputsHolder> */}
         <Fieldset>
           <FormInput
             placeholder="Profissão"
@@ -143,7 +144,7 @@ const EditInfoCard = () => {
             type="password"
           />
         </Fieldset>
-        {/* </InputsHolder> */}
+
         <ButtonHolder>
           <FormButton title="Salvar" />
         </ButtonHolder>

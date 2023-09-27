@@ -1,12 +1,8 @@
 import styled, { css, keyframes } from "styled-components";
 
 export const Container = styled.div`
-  ${({ theme }) => {
-    return css`
-      position: relative;
-      width: 100%;
-    `;
-  }}
+  position: relative;
+  width: 100%;
 `;
 
 interface SelectProps {
@@ -172,13 +168,9 @@ export const Option = styled.li<OptionProps>`
 `;
 
 export const ErrorText = styled.small`
-  ${({ theme }) => {
-    return css`
-      position: absolute;
-      bottom: -1.6rem;
-      left: 0.4rem;
-      color: #ff0035;
-      font-size: 1.2rem;
-    `;
-  }}
+  position: absolute;
+  bottom: -1.6rem;
+  left: 0.4rem;
+  color: #ff0035;
+  font-size: 1.2rem;
 `;

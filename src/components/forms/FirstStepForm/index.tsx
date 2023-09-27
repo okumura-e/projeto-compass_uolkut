@@ -1,10 +1,6 @@
 import { useRef, useContext } from "react";
 import { useForm } from "react-hook-form";
-import { UserContext } from "../../../context/UserContext";
-import { api } from "../../../config/api";
-import toast from "react-hot-toast";
-import FormButton from "../../FormButton";
-import FormInput from "../../FormInput";
+import { useNavigate } from "react-router-dom";
 import {
   FormContainer,
   Logo,
@@ -12,10 +8,26 @@ import {
   RowContainer,
   ButtonContainer,
 } from "./styles";
-
-import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import FormButton from "../../FormButton";
+import FormInput from "../../FormInput";
 import CustomSelect from "../../CustomSelect";
 import BlankCard from "../../cards/BlankCard";
+
+import { UserContext } from "../../../context/UserContext";
+import { api } from "../../../config/api";
+
+import { MaritalStatus } from "../../../interfaces/MaritalStatus";
+
+type FormValues = {
+  email: string;
+  password: string;
+  fullname: string;
+  birthday: string;
+  job: string;
+  country: string;
+  city: string;
+};
 
 const FirstStepForm = () => {
   const { setUser } = useContext(UserContext);
@@ -25,19 +37,9 @@ const FirstStepForm = () => {
     formState: { errors, isSubmitting },
     handleSubmit,
     register,
-  } = useForm({
-    defaultValues: {
-      email: "",
-      password: "",
-      fullname: "",
-      birthday: "",
-      job: "",
-      country: "",
-      city: "",
-    },
-  });
+  } = useForm<FormValues>();
 
-  const selectRef = useRef({} as { value: string; hasError: boolean });
+  const selectRef = useRef({} as { value: MaritalStatus; hasError: boolean });
 
   const handleError = () => {
     if (!selectRef.current.value) {
@@ -49,7 +51,7 @@ const FirstStepForm = () => {
     }, 2500);
   };
 
-  const onSubmit = async (data: unknown) => {
+  const onSubmit = async (data: FormValues) => {
     if (!selectRef.current.value) {
       selectRef.current.hasError = true;
       setTimeout(() => (selectRef.current.hasError = false), 2500);
@@ -161,7 +163,7 @@ const FirstStepForm = () => {
         <CustomSelect
           selected={selectRef.current.value}
           onSelect={(text) => {
-            selectRef.current.value = text;
+            selectRef.current.value = text as MaritalStatus;
           }}
           options={[
             "Solteiro",

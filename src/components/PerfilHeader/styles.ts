@@ -32,28 +32,20 @@ export const ContentContainer = styled.div`
 `;
 
 export const LeftSection = styled.section`
-  ${({ theme }) => {
-    return css`
-      display: flex;
+  display: flex;
 
-      gap: 3.1rem;
-    `;
-  }}
+  gap: 3.1rem;
 `;
 export const RightSection = styled.section`
-  ${({ theme }) => {
-    return css`
-      display: flex;
-      justify-content: flex-end;
-      width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 
-      @media screen and (max-width: 780px) {
-        & div:nth-child(1) {
-          display: none;
-        }
-      }
-    `;
-  }}
+  @media screen and (max-width: 780px) {
+    & div:nth-child(1) {
+      display: none;
+    }
+  }
 `;
 export const Logo = styled.h1`
   ${({ theme }) => {
@@ -84,14 +76,10 @@ export const Navbar = styled.nav`
   }}
 `;
 export const LinksList = styled.ul`
-  ${({ theme }) => {
-    return css`
-      display: flex;
-      list-style: none;
+  display: flex;
+  list-style: none;
 
-      gap: 3.7rem;
-    `;
-  }}
+  gap: 3.7rem;
 `;
 
 export const LinkHolder = styled.li``;
@@ -180,16 +168,12 @@ export const UserContainer = styled.div`
   }}
 `;
 export const Username = styled.p`
-  ${({ theme }) => {
-    return css`
-      display: none;
-      @media screen and (min-width: 780px) {
-        display: block;
-        margin-left: 1.4rem;
-        margin-right: 0.4rem;
-        font-size: 1.6rem;
-        cursor: pointer;
-      }
-    `;
-  }}
+  display: none;
+  @media screen and (min-width: 780px) {
+    display: block;
+    margin-left: 1.4rem;
+    margin-right: 0.4rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
 `;
