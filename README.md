@@ -8,7 +8,9 @@ It's a alternative application, like the old "orkut", with auth forms, and a pro
 
 After you clone the repository and do a `npm i` command to install all the required packages, it's only have a few more steps to run the application correctly.
 
-In this project we used a <strong>fake rest api</strong> made with `json-server`, and the only command you need to run to server is `npm run server`, make sure to run this command before start the project, if you don't do this, the project <strong style="color: red;">will not run correctly</strong>.
+In this project we used a <strong>fake rest api</strong> made with `json-server`, and the only command you need to run to server is `npm run server`, it'll execute a custom script, make sure to run this command before start the project, if you don't do this, the project <strong>will not run correctly</strong>.
+
+After this you can run a simple `npm run dev` in another terminal and the project will execute normally.
 
 ## :iphone: Main Techs
 
@@ -22,6 +24,7 @@ In this project we used a <strong>fake rest api</strong> made with `json-server`
 - React hook form
 - React Hot Toast
 - Json Server
+- Axios
 
 ## :page_facing_up: Pages
 
@@ -40,6 +43,8 @@ In this project we used a <strong>fake rest api</strong> made with `json-server`
 │   ├─── config
 │   ├─── context
 │   ├─── hooks
+│   ├─── interfaces
+│   ├─── styles: Contains files like global styles and global theme
 │   ├─── templates: Contains the pages files
 │   └─── utils
 ```
