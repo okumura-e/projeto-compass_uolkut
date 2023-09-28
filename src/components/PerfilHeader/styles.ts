@@ -36,16 +36,28 @@ export const LeftSection = styled.section`
 
   gap: 3.1rem;
 `;
-export const RightSection = styled.section`
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
 
-  @media screen and (max-width: 780px) {
-    & div:nth-child(1) {
-      display: none;
-    }
-  }
+interface RightSectionProps {
+  noSearch?: boolean;
+}
+
+export const RightSection = styled.section<RightSectionProps>`
+  ${({ noSearch }) => {
+    return css`
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+
+      ${!noSearch &&
+      css`
+        @media screen and (max-width: 780px) {
+          & div:nth-child(1) {
+            display: none;
+          }
+        }
+      `}
+    `;
+  }}
 `;
 export const Logo = styled.h1`
   ${({ theme }) => {

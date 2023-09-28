@@ -18,9 +18,10 @@ import SearchInput from "../SearchInput";
 
 interface PerfilHeaderProps {
   username: string;
+  type?: "noSearch" | "full";
 }
 
-const PerfilHeader = ({ username }: PerfilHeaderProps) => {
+const PerfilHeader = ({ username, type = "full" }: PerfilHeaderProps) => {
   return (
     <Container>
       <ContentContainer>
@@ -43,8 +44,8 @@ const PerfilHeader = ({ username }: PerfilHeaderProps) => {
             </LinksList>
           </Navbar>
         </LeftSection>
-        <RightSection>
-          <SearchInput />
+        <RightSection noSearch={type === "noSearch"}>
+          {type !== "noSearch" && <SearchInput />}
           <UserContainer>
             <span>
               <AiOutlineUser />

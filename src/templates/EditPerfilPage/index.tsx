@@ -8,7 +8,7 @@ const EditPerfilPage = () => {
   const { user } = useKeepUser();
   return (
     <>
-      <PerfilHeader username={user?.fullname || ""} />
+      <PerfilHeader type="noSearch" username={user?.fullname || ""} />
       <Container>
         <EditUserCard />
         <EditInfoCard />
