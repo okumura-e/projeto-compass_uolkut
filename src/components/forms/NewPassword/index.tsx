@@ -95,7 +95,7 @@ const NewPasswordForm = () => {
         <ButtonContainer>
           <FormButton
             onClick={handleSubmit(onSubmit, () =>
-              setTimeout(clearErrors, 2500)
+              setTimeout(clearErrors, 2500),
             )}
             title="Salvar"
           />

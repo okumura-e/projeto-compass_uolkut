@@ -34,7 +34,7 @@ const CustomSelect = ({
   };
 
   const handleSelectClick = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
     e.preventDefault();
     setIsOpen((prev) => !prev);

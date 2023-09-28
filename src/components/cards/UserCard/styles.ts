@@ -34,7 +34,7 @@ export const ImageContainer = styled.div`
 export const Fullname = styled.p`
   ${({ theme }) => {
     return css`
-    text-align: center;
+      text-align: center;
       font-size: 2rem;
       margin-bottom: 1.6rem;
 

@@ -22,7 +22,7 @@ const router = createBrowserRouter(
     </Route>,
     <Route path="/profile" element={<PerfilPage />} />,
     <Route path="/edit-profile" element={<EditPerfilPage />} />,
-  ])
+  ]),
 );
 
 function App() {

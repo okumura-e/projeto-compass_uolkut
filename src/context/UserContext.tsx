@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 import { IUser } from "../interfaces/User";
 
 export const UserContext = createContext(
-  {} as { user: IUser | undefined; setUser: (data?: IUser) => void }
+  {} as { user: IUser | undefined; setUser: (data?: IUser) => void },
 );
 
 interface UserContextProviderProps {

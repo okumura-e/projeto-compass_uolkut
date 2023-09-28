@@ -36,7 +36,7 @@ const LoginForm = () => {
   const onSubmit = async (data: FormValues) => {
     try {
       const { data: user } = await api.get(
-        `users?email=${data.email}&password=${data.password}`
+        `users?email=${data.email}&password=${data.password}`,
       );
 
       if (user.length) {

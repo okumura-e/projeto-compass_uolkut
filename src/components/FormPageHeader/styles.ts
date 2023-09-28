@@ -30,12 +30,8 @@ export const ContentContainer = styled.div`
 
       ${theme.medias.desktop} {
         justify-content: space-between;
-        
       }
-
     `;
-
-
   }}
 `;
 
@@ -56,34 +52,33 @@ export const Logo = styled.h1`
 `;
 
 interface LinkProps {
-    selected?: boolean;
-  }
-  
-  export const Link = styled.a<LinkProps>`
-    ${({ theme, selected }) => {
-      return css`
-        font-size: 1.8rem;
-        color: ${theme.colors.content};
-        align-self: center;
-        display: none;
-        transition: color 0.2s ease-in-out;
-        
-        cursor: pointer;
+  selected?: boolean;
+}
 
-        ${theme.medias.desktop} {
-            display: inline;
+export const Link = styled.a<LinkProps>`
+  ${({ theme, selected }) => {
+    return css`
+      font-size: 1.8rem;
+      color: ${theme.colors.content};
+      align-self: center;
+      display: none;
+      transition: color 0.2s ease-in-out;
 
-        }
-  
-        ${selected
-          ? () => css`
+      cursor: pointer;
+
+      ${theme.medias.desktop} {
+        display: inline;
+      }
+
+      ${selected
+        ? () => css`
+            color: ${theme.colors.primary};
+          `
+        : () => css`
+            &:hover {
               color: ${theme.colors.primary};
-            `
-          : () => css`
-              &:hover {
-                color: ${theme.colors.primary};
-              }
-            `}
-      `;
-    }}
-  `;
+            }
+          `}
+    `;
+  }}
+`;

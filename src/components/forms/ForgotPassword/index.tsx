@@ -59,7 +59,7 @@ const ForgotPasswordForm = () => {
           <FormButton
             title="Enviar código"
             onClick={handleSubmit(onSubmit, () =>
-              setTimeout(clearErrors, 2500)
+              setTimeout(clearErrors, 2500),
             )}
           />
         </ButtonContainer>
