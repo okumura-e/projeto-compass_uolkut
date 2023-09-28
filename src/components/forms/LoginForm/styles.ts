@@ -54,17 +54,13 @@ export const Title = styled.h2`
 `;
 
 export const CheckBoxContainer = styled.div`
-  ${({ theme }) => {
-    return css`
-      display: flex;
-      justify-content: flex-start;
-      padding-left: 1rem;
-      width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1rem;
+  width: 100%;
 
-      margin-top: 1.5rem;
-      margin-bottom: 2.5rem;
-    `;
-  }}
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
 `;
 
 export const CheckBox = styled.input.attrs({

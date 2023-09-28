@@ -5,7 +5,7 @@ interface ContainerProps {
 }
 
 export const Container = styled.div<ContainerProps>`
-  ${({ theme, half }) => {
+  ${({ half }) => {
     return css`
       position: relative;
       display: flex;
@@ -77,14 +77,10 @@ export const Input = styled.input<InputProps>`
 `;
 
 export const ErrorText = styled.small`
-  ${({ theme }) => {
-    return css`
-      position: absolute;
-      bottom: -1.6rem;
-      left: 0.4rem;
-      color: #ff0035;
-      font-size: 1.2rem;
-      white-space: nowrap;
-    `;
-  }}
+  position: absolute;
+  bottom: -1.6rem;
+  left: 0.4rem;
+  color: #ff0035;
+  font-size: 1.2rem;
+  white-space: nowrap;
 `;

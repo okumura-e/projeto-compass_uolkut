@@ -20,13 +20,9 @@ export const Title = styled.h2`
 `;
 
 export const Form = styled.form`
-  ${({ theme }) => {
-    return css`
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    `;
-  }}
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 `;
 
 export const Fieldset = styled.fieldset`

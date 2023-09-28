@@ -1,10 +1,11 @@
 import { InputHTMLAttributes } from "react";
+import { UseFormRegisterReturn } from "react-hook-form";
 import { Container, Input, ErrorText } from "./styles";
 
 interface InputProps {
   half?: boolean;
   error?: string;
-  registerField?: unknown;
+  registerField?: UseFormRegisterReturn;
 }
 
 function FormInput({

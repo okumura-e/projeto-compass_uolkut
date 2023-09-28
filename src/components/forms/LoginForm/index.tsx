@@ -18,6 +18,11 @@ import { api } from "../../../config/api";
 import { useContext } from "react";
 import { UserContext } from "../../../context/UserContext";
 
+type FormValues = {
+  email: string;
+  password: string;
+};
+
 const LoginForm = () => {
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -26,14 +31,9 @@ const LoginForm = () => {
     formState: { errors, isSubmitting },
     handleSubmit,
     register,
-  } = useForm({
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-  });
+  } = useForm<FormValues>();
 
-  const onSubmit = async (data: unknown) => {
+  const onSubmit = async (data: FormValues) => {
     try {
       const { data: user } = await api.get(
         `users?email=${data.email}&password=${data.password}`

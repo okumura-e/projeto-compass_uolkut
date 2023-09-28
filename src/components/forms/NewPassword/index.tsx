@@ -13,8 +13,13 @@ import { useNavigate } from "react-router-dom";
 import FormButton from "../../FormButton";
 import FormInput from "../../FormInput";
 import { useForm } from "react-hook-form";
-import FormCard from "../FormCard";
 import BlankCard from "../../cards/BlankCard";
+
+type FormValues = {
+  code: string;
+  password: string;
+  confirmPassword: string;
+};
 
 const NewPasswordForm = () => {
   const navigate = useNavigate();
@@ -25,17 +30,11 @@ const NewPasswordForm = () => {
     handleSubmit,
     register,
     watch,
-  } = useForm({
-    defaultValues: {
-      code: "",
-      password: "",
-      confirmPassword: "",
-    },
-  });
+  } = useForm<FormValues>();
 
   const checkPassword = watch("password");
 
-  const onSubmit = (data: unknown) => {
+  const onSubmit = () => {
     navigate("/");
   };
   return (

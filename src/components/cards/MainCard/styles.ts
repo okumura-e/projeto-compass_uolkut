@@ -67,54 +67,38 @@ export const Thought = styled.p`
 `;
 
 export const StatisticsContainer = styled.section`
-  ${({ theme }) => {
-    return css`
-      display: flex;
-      gap: 3.2rem;
-      width: 100%;
+  display: flex;
+  gap: 3.2rem;
+  width: 100%;
 
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 
-      margin-bottom: 4.8rem;
-    `;
-  }}
+  margin-bottom: 4.8rem;
 `;
 
 export const Statistic = styled.p`
-  ${({ theme }) => {
-    return css`
-      width: fit-content;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    `;
-  }}
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 `;
 
 export const StatisticTitle = styled.span`
-  ${({ theme }) => {
-    return css`
-      font-size: 1.6rem;
-    `;
-  }}
+  font-size: 1.6rem;
 `;
 
 export const StatisticData = styled.span`
-  ${({ theme }) => {
-    return css`
-      display: flex;
+  display: flex;
 
-      align-items: center;
+  align-items: center;
 
-      gap: 0.6rem;
-      font-size: 1.6rem;
+  gap: 0.6rem;
+  font-size: 1.6rem;
 
-      svg {
-        width: 2.4rem;
-        height: auto;
-      }
-    `;
-  }}
+  svg {
+    width: 2.4rem;
+    height: auto;
+  }
 `;
 
 export const DetailsDataContainer = styled.section`
@@ -135,24 +119,16 @@ export const DetailsDataContainer = styled.section`
   }}
 `;
 
-export const Detail = styled.p`
-  ${({ theme }) => {
-    return css``;
-  }}
-`;
+export const Detail = styled.p``;
 
 export const PreferencesContainer = styled.section`
-  ${({ theme }) => {
-    return css`
-      display: flex;
-      flex-direction: column;
-      margin-top: auto;
-      gap: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  gap: 3.2rem;
 
-      width: 100%;
-      overflow-x: hidden;
-    `;
-  }}
+  width: 100%;
+  overflow-x: hidden;
 `;
 
 export const Preference = styled.article`
@@ -167,18 +143,14 @@ export const Preference = styled.article`
 `;
 
 export const TagsList = styled.ul`
-  ${({ theme }) => {
-    return css`
-      display: flex;
-      overflow-x: hidden;
-      width: fit-content;
-      max-width: 100%;
+  display: flex;
+  overflow-x: hidden;
+  width: fit-content;
+  max-width: 100%;
 
-      margin: 0;
+  margin: 0;
 
-      list-style: none;
-    `;
-  }}
+  list-style: none;
 `;
 
 export const Tag = styled.li`
